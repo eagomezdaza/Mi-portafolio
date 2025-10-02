@@ -1,53 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Machine Learning</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio ML — John Gómez</title>
+  <!-- Enlace al CSS -->
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
+  <!-- Barra superior -->
+  <header class="navbar">
     <div class="wrap">
-      <a href="#" class="brand">John Gómez</a>
-      <button id="themeToggle">🌙/☀️</button>
+      <a class="brand" href="#">mi-portafolio</a>
+      <button id="themeToggle" aria-label="Cambiar tema">🌓</button>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero -->
-  <section class="hero wrap">
-    <h1>Portafolio de Machine Learning</h1>
-    <p class="lead">Bienvenido/a a mi portafolio digital. Aquí muestro los proyectos realizados durante mi formación.</p>
-    <div class="badges">
-      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-      <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white">
-      <img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white">
-    </div>
-    <div class="cta">
-      <a href="https://github.com/eagomezdaza/Mi-portafolio" class="btn">Ver en GitHub</a>
-      <a href="#proyectos" class="btn ghost">Explorar proyectos</a>
-    </div>
-  </section>
-
-  <!-- Proyectos -->
-  <section id="proyectos" class="section wrap">
-    <h2>Proyectos</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Clasificación Iris</h3>
-        <p>Modelo supervisado para identificar especies de flores.</p>
-        <div class="tags">
-          <span>Python</span><span>scikit-learn</span>
-        </div>
-        <div class="links"><a href="#">Repositorio</a></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Portafolio de Machine Learning — John Gómez</h1>
+      <p class="lead">
+        Proyectos del curso: análisis de datos, modelos predictivos y despliegue práctico.
+      </p>
+      <div class="badges">
+        <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54">
+        <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white">
+        <img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white">
+      </div>
+      <div class="cta">
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn ghost" href="https://github.com/eagomezdaza/Mi-portafolio" target="_blank" rel="noopener">Ver repo</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer wrap">
-    <p>© 2025 John Gómez — Portafolio de Machine Learning</p>
+  <!-- PRESENTACIÓN -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Presentación Personal</h2>
+      <ul class="bullets">
+        <li><strong>Nombre:</strong> John Gómez</li>
+        <li><strong>Formación:</strong> Aprendiz en Machine Learning</li>
+        <li><strong>Intereses:</strong> Ciencia de Datos, IA aplicada, clasificación y predicción</li>
+        <li><strong>Objetivo:</strong> Desarrollar habilidades aplicables a proyectos reales</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="section">
+    <div class="wrap">
+      <h2>Proyectos</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Iris — Clasificación</h3>
+          <p>Regresión Logística vs SVM vs Random Forest. Flujo completo y métricas.</p>
+          <div class="tags"><span>Python</span><span>sklearn</span><span>EDA</span></div>
+          <div class="links"><a href="#" target="_blank" rel="noopener">Código</a></div>
+        </article>
+
+        <article class="card">
+          <h3>Wine — Clasificación</h3>
+          <p>Comparación de modelos con validación cruzada. Guardado de pipeline.</p>
+          <div class="tags"><span>Python</span><span>sklearn</span><span>CV</span></div>
+          <div class="links"><a href="#" target="_blank" rel="noopener">Código</a></div>
+        </article>
+
+        <article class="card">
+          <h3>Diabetes — Predicción</h3>
+          <p>Sensibilidad vs exactitud en contexto de salud. Curvas y matriz de confusión.</p>
+          <div class="tags"><span>Python</span><span>sklearn</span><span>Salud</span></div>
+          <div class="links"><a href="#" target="_blank" rel="noopener">Código</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <ul class="bullets">
+        <li><strong>Email:</strong> agrega tu email</li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/eagomezdaza/" target="_blank" rel="noopener">John Gómez</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/eagomezdaza" target="_blank" rel="noopener">eagomezdaza</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <small>© <span id="year"></span> John Gómez — MIT License</small>
+    </div>
   </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Tema oscuro/claro persistente
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved) root.dataset.theme = saved;
+    document.getElementById('themeToggle').onclick = () => {
+      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      root.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    };
+    if (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      root.dataset.theme = 'dark';
+    }
+  </script>
 </body>
 </html>
