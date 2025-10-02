@@ -24,7 +24,7 @@ Portafolio web desarrollado con HTML y CSS que muestra mis proyectos, habilidade
 
 ## 🌐 Demo en Vivo
 
-🔗 **[Ver Portafolio Online](https://eagomezdaza.github.io/mi-portafolio/)**
+🔗 **[[Ver Portafolio Online](https://eagomezdaza.github.io/mi-portafolio/)]([https://eagomezdaza.github.io/mi-portafolio/](https://eagomezdaza.github.io/mi-portafolio/))**
 
 *Nota: Reemplaza el enlace anterior con tu URL real de GitHub Pages cuando despliegues el proyecto*
 
