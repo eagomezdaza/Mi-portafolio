@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio ML — John Gómez</title>
-  <!-- Enlace al CSS -->
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
@@ -12,6 +11,11 @@
   <header class="navbar">
     <div class="wrap">
       <a class="brand" href="#">mi-portafolio</a>
+      <nav>
+        <a href="#presentacion">Presentación</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
       <button id="themeToggle" aria-label="Cambiar tema">🌓</button>
     </div>
   </header>
@@ -36,7 +40,7 @@
   </section>
 
   <!-- PRESENTACIÓN -->
-  <section class="section">
+  <section id="presentacion" class="section">
     <div class="wrap">
       <h2>Presentación Personal</h2>
       <ul class="bullets">
@@ -57,28 +61,37 @@
           <h3>Iris — Clasificación</h3>
           <p>Regresión Logística vs SVM vs Random Forest. Flujo completo y métricas.</p>
           <div class="tags"><span>Python</span><span>sklearn</span><span>EDA</span></div>
-          <div class="links"><a href="#" target="_blank" rel="noopener">Código</a></div>
+          <div class="links">
+            <a href="proyecto-iris.html">Ver detalle</a>
+            <a href="#" target="_blank" rel="noopener">Código</a>
+          </div>
         </article>
 
         <article class="card">
           <h3>Wine — Clasificación</h3>
           <p>Comparación de modelos con validación cruzada. Guardado de pipeline.</p>
           <div class="tags"><span>Python</span><span>sklearn</span><span>CV</span></div>
-          <div class="links"><a href="#" target="_blank" rel="noopener">Código</a></div>
+          <div class="links">
+            <a href="proyecto-wine.html">Ver detalle</a>
+            <a href="#" target="_blank" rel="noopener">Código</a>
+          </div>
         </article>
 
         <article class="card">
           <h3>Diabetes — Predicción</h3>
           <p>Sensibilidad vs exactitud en contexto de salud. Curvas y matriz de confusión.</p>
           <div class="tags"><span>Python</span><span>sklearn</span><span>Salud</span></div>
-          <div class="links"><a href="#" target="_blank" rel="noopener">Código</a></div>
+          <div class="links">
+            <a href="proyecto-diabetes.html">Ver detalle</a>
+            <a href="#" target="_blank" rel="noopener">Código</a>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section class="section">
+  <section id="contacto" class="section">
     <div class="wrap">
       <h2>Contacto</h2>
       <ul class="bullets">
