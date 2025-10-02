@@ -38,10 +38,10 @@ Portafolio web desarrollado con HTML y CSS que muestra mis proyectos, habilidade
 ## 📁 Estructura del Proyecto
 ```
 mi-portafolio/
-- ├──index.html
-- ├── styles/
--    ├── style.css
-- ├── assets/
+├──index.html
+├── styles/
+   ├── style.css
+├── assets/
 │   ├── images/
 │   ├── icons/
 ├── README.md
