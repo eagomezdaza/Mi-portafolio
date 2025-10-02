@@ -1,13 +1,23 @@
 # Portafolio de Machine Learning — John Gómez
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
+![Banner](https://img.shields.io/badge/PORTAFOLIO%20MACHINE%20LEARNING-4CAF50?style=for-the-badge&logo=github&logoColor=white)
 
 Bienvenido/a a mi portafolio digital.  
 Soy estudiante en formación en el área de **Machine Learning**, con interés en el análisis de datos, la construcción de modelos predictivos y el despliegue de soluciones prácticas.  
 
 Este portafolio reúne los proyectos desarrollados durante el curso, donde apliqué técnicas de aprendizaje automático y herramientas fundamentales en el campo.
+
+---
+
+## 🚀 Tecnologías
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-3499CD?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-4D77CF?style=for-the-badge&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=plotly&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-2E6E8E?style=for-the-badge&logo=plotly&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ---
 
