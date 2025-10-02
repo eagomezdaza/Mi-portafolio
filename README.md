@@ -79,9 +79,9 @@ mi-portafolio/
 └── LICENSE
 ```
 
-## 🌐 Demo en Vivo
+## 🌐 Enlace Online
+🔗 [Ver Portafolio Online](https://eagomezdaza.github.io/Mi-portafolio/)
 
-🔗 **[Ver Portafolio Online](https://eagomezdaza.github.io/mi-portafolio/)**
 
 > El portafolio está desplegado en GitHub Pages para facilitar su acceso online.
 
