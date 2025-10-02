@@ -68,7 +68,7 @@ Este portafolio reúne los proyectos desarrollados durante el curso, donde apliq
 
 ## 📁 Estructura del Proyecto
 ```
-mi-portafolio/
+Mi-portafolio/
 ├──index.html
 ├── styles/
 │   ├── style.css
