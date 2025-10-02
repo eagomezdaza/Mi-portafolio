@@ -35,16 +35,18 @@ Portafolio web desarrollado con HTML y CSS que muestra mis proyectos, habilidade
 - **GitHub Pages** - Hosting y despliegue
 - **Git** - Control de versiones
 
+## 📁 Estructura del Proyecto
+```
 mi-portafolio/
-|
-|-- index.html
-|-- styles/
-    |-- style.css
-|-- assets/
-| |-- images/
-| |-- icons/
-|-- README.md
-|-- LICENSE
+- ├──index.html
+- ├── styles/
+-    ├── style.css
+- ├── assets/
+│   ├── images/
+│   ├── icons/
+├── README.md
+└── LICENSE
+```
 
 ## 🚀 Instalación y Uso Local
 
