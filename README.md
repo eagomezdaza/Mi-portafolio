@@ -40,10 +40,10 @@ mi-portafolio/
 │
 ├── index.html
 ├── styles/
-│ └── style.css
+│   └── style.css
 ├── assets/
-│ ├── images/
-│ └── icons/
+│   ├── images/
+│   └── icons/
 ├── README.md
 └── LICENSE
 
@@ -81,4 +81,9 @@ Si tienes preguntas o quieres colaborar, no dudes en contactarme:
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT.
+
+---
+
+**Dirección GitHub**  
+[eagomezdaza/mi-portafolio](https://github.com/eagomezdaza/mi-portafolio)
    
