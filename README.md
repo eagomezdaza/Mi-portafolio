@@ -40,7 +40,7 @@ Portafolio web desarrollado con HTML y CSS que muestra mis proyectos, habilidade
 mi-portafolio/
 ├──index.html
 ├── styles/
-   ├── style.css
+│   ├── style.css
 ├── assets/
 │   ├── images/
 │   ├── icons/
