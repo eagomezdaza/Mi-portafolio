@@ -1,39 +1,60 @@
-# Mi Portafolio Personal
+# Portafolio de Machine Learning — John Gómez
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
-Portafolio web desarrollado con HTML y CSS que muestra mis proyectos, habilidades y experiencia como desarrollador en formación.
+Bienvenido/a a mi portafolio digital.  
+Soy estudiante en formación en el área de **Machine Learning**, con interés en el análisis de datos, la construcción de modelos predictivos y el despliegue de soluciones prácticas.  
 
-## 🚀 Características
+Este portafolio reúne los proyectos desarrollados durante el curso, donde apliqué técnicas de aprendizaje automático y herramientas fundamentales en el campo.
 
-- Diseño responsive y moderno
-- Navegación intuitiva
-- Sección de proyectos destacados
-- Información de contacto integrada
-- Optimizado para diferentes dispositivos
+---
 
-## 👨‍💻 Autor
+## 👤 Presentación Personal
+- **Nombre:** John Gómez  
+- **Formación:** Aprendiz en Machine Learning  
+- **Intereses:** Ciencia de Datos, Inteligencia Artificial aplicada, Desarrollo de proyectos de predicción y clasificación.  
+- **Objetivo profesional:** Continuar desarrollando habilidades en Machine Learning para aplicarlas en proyectos reales de análisis y toma de decisiones.
 
-**John Gómez**  
-*Desarrollador en Formación*
+---
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eagomezdaza/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eagomezdaza)
+## 📂 Proyectos
 
-## 🌐 Demo en Vivo
+### 1. Clasificación de Flores — Dataset Iris
+- **Descripción:** Modelo de clasificación supervisada para predecir el tipo de flor (Setosa, Versicolor, Virginica) a partir de características morfológicas.  
+- **Objetivo:** Aplicar regresión logística y comparar desempeño con SVM y Random Forest.  
+- **Tecnologías:** Python, scikit-learn, Pandas, Matplotlib.  
+- **Código fuente:** [Repositorio en GitHub](#)  
+- **Reflexión:** Este proyecto me permitió entender el flujo completo de un problema de clasificación, desde la carga de datos hasta la evaluación de métricas como accuracy y matriz de confusión.
 
-🔗 **[[Ver Portafolio Online](https://eagomezdaza.github.io/mi-portafolio/)]([https://eagomezdaza.github.io/mi-portafolio/](https://eagomezdaza.github.io/mi-portafolio/))**
+---
 
-*Nota: Reemplaza el enlace anterior con tu URL real de GitHub Pages cuando despliegues el proyecto*
+### 2. Predicción de Vinos — Dataset Wine
+- **Descripción:** Proyecto de clasificación supervisada usando el dataset Wine de scikit-learn para identificar la clase de vino según propiedades químicas.  
+- **Objetivo:** Evaluar distintos algoritmos (Regresión Logística, Random Forest, SVM) y seleccionar el mejor modelo mediante validación cruzada.  
+- **Tecnologías:** Python, scikit-learn, joblib.  
+- **Código fuente:** [Repositorio en GitHub](#)  
+- **Reflexión:** Aprendí la importancia de la validación cruzada y de la normalización de variables para mejorar la precisión de modelos basados en distancias.
+
+---
+
+### 3. Predicción de Diabetes — Dataset Pima Indians Diabetes
+- **Descripción:** Modelo predictivo para estimar la probabilidad de que una persona presente diabetes en función de características médicas.  
+- **Objetivo:** Comparar modelos de clasificación y evaluar sensibilidad/especificidad además de accuracy.  
+- **Tecnologías:** Python, scikit-learn, Seaborn.  
+- **Código fuente:** [Repositorio en GitHub](#)  
+- **Reflexión:** Este proyecto me permitió reflexionar sobre el balance entre precisión y sensibilidad, especialmente en problemas relacionados con salud.
+
+---
 
 ## 🛠️ Tecnologías Utilizadas
+- **Lenguajes:** Python  
+- **Librerías ML:** scikit-learn, Pandas, NumPy, Matplotlib, Seaborn  
+- **Entornos:** Jupyter Notebook, Google Colab  
+- **Control de versiones:** Git y GitHub
 
-- **HTML5** - Estructura semántica del sitio
-- **CSS3** - Estilos y diseño responsive
-- **GitHub Pages** - Hosting y despliegue
-- **Git** - Control de versiones
+---
 
 ## 📁 Estructura del Proyecto
 ```
@@ -48,18 +69,27 @@ mi-portafolio/
 └── LICENSE
 ```
 
+## 🌐 Demo en Vivo
+
+🔗 **[Ver Portafolio Online](https://eagomezdaza.github.io/mi-portafolio/)**
+
+> El portafolio está desplegado en GitHub Pages para facilitar su acceso online.
+
+---
+
 ## 🚀 Instalación y Uso Local
 
-1. Clona el repositorio
+1. Clonar el repositorio  
+   ```bash
    git clone https://github.com/eagomezdaza/mi-portafolio.git
+   ```
 
 2. Navega al directorio
    cd mi-portafolio
 
 3. Abre el proyecto
    - Abre el archivo index.html directamente en tu navegador  
-   o usa un servidor local:
-
+   - O usa un servidor local:
    Con Python:
    python -m http.server 8000
 
@@ -72,7 +102,7 @@ mi-portafolio/
 
 Si tienes preguntas o quieres colaborar, no dudes en contactarme:
 
-📧 Email: [Agrega tu email]  
+📧 Email: [eagomezdaza@gmail.com]  
 💼 LinkedIn: John Gómez  
 💻 GitHub: eagomezdaza  
 
