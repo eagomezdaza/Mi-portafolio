@@ -376,3 +376,25 @@ Mejoras visuales de contraste y legibilidad
   transform: translateY(-1px);
   transition: transform .15s ease, border-color .2s ease;
 }
+
+/* Tablas con Bootstrap en tema oscuro */
+.table {
+  color: var(--text);
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--card-border);
+}
+
+.table td,
+.table th {
+  border-color: var(--card-border);
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(96, 165, 250, .08);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: rgba(96, 165, 250, .04);
+}
