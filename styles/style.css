@@ -467,3 +467,23 @@ aside .card .card-body a,
 aside .card .card-body a:hover {
   text-decoration: underline;
 }
+
+/* Sidebar "Información" más legible */
+aside .card .card-body h5,
+.row .col-lg-4 .card .card-body h5 {
+  color: #ffffff !important;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+aside .card .card-body,
+.row .col-lg-4 .card .card-body {
+  color: #e6edf7 !important;
+}
+aside .card .card-body a,
+.row .col-lg-4 .card .card-body a {
+  color: #8cc3ff !important;
+  text-decoration: none;
+}
+aside .card .card-body a:hover {
+  text-decoration: underline;
+}
