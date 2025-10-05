@@ -378,23 +378,69 @@ Mejoras visuales de contraste y legibilidad
 }
 
 /* Tablas con Bootstrap en tema oscuro */
-.table {
+.table { color: var(--text); }
+.table thead th { border-bottom: 2px solid var(--card-border); }
+.table td, .table th { border-color: var(--card-border); }
+.table-hover tbody tr:hover { background: rgba(96,165,250,.08); }
+.table-striped tbody tr:nth-of-type(odd) { background: rgba(96,165,250,.04); }
+
+/* ====== Mejora de contraste en proyecto ====== */
+
+/* Títulos y subtítulos del contenido */
+main h1, main h2, main h3, main h4 {
+  color: #eaf2ff; /* más blanco en tema oscuro */
+}
+
+/* Tarjeta lateral (Información) */
+.card {
+  background: #141c2b !important;
+  border-color: #2f3e54 !important;
+}
+.card .card-body {
   color: var(--text);
 }
 
-.table thead th {
-  border-bottom: 2px solid var(--card-border);
+/* Links dentro de tarjetas: mayor contraste */
+.card a {
+  color: #9ecbff !important;            /* link más claro */
+  text-decoration-color: rgba(158,203,255,.4);
+}
+.card a:hover {
+  color: #cfe5ff !important;
+  text-decoration: underline;
 }
 
-.table td,
-.table th {
-  border-color: var(--card-border);
-}
+/* Breadcrumb y botones */
+.breadcrumb a { color: #bcd6ff !important; }
+.btn-outline-primary { border-color: #4a6ea8; color: #cfe5ff; }
+.btn-outline-primary:hover { background:#254066; color: #fff; }
 
-.table-hover tbody tr:hover {
-  background: rgba(96, 165, 250, .08);
-}
+/* ====== Tabla bonita (Markdown o HTML) ====== */
+.table { color: var(--text); }
+.table thead th { border-bottom: 2px solid var(--card-border); }
+.table td, .table th { border-color: var(--card-border); }
+.table-hover tbody tr:hover { background: rgba(96,165,250,.08); }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background: rgba(96, 165, 250, .04);
+/* Por si la tabla es Markdown puro (sin clases) */
+.markdown table { width: 100%; border-collapse: collapse; }
+.markdown table th, .markdown table td {
+  padding: 10px 12px; border-bottom: 1px solid var(--card-border);
 }
+.markdown thead th { border-bottom: 2px solid var(--card-border); }
+
+/* ====== Galería de capturas ====== */
+.gallery .col-md-6 { display: flex; }
+.gallery .figure { width: 100%; }
+.gallery .figure img {
+  display: block;
+  width: 100%;
+  height: auto;               /* no deformar */
+  background: var(--bg-soft); /* leve fondo */
+  padding: 8px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+.figure-caption { color: var(--muted); margin-top: 6px; }
+
+/* Un pelín más de espacio entre bloques */
+section + section, .gallery { margin-top: 10px; }
