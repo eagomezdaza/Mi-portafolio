@@ -10,27 +10,41 @@ img {
   display: inline-block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   line-height: 1.6;
 }
 
-/* Variables de color */
+/* =========================
+   Variables de color (oscuro legible)
+   ========================= */
 :root {
-  --bg: #0b0f14;
-  --bg-soft: #0e141a;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+  /* Fondo original, atenuado para mejor visibilidad */
+  --bg: #0f1520;
+  --bg-soft: #121a24;
+
+  /* Texto más claro y secundario más legible */
+  --text: #eef2f7;
+  --muted: #bac4d2;
+
+  /* Marca */
   --brand: #60a5fa;
   /* azul */
   --brand-2: #22d3ee;
   /* cian */
-  --card: #111827;
-  --card-border: #1f2937;
+
+  /* Tarjetas y bordes con mayor contraste */
+  --card: #121826;
+  --card-border: #253040;
+
   --shadow: 0 10px 25px rgba(0, 0, 0, .35);
 }
 
-/* Tema claro (toggle) */
+/* Tema claro (opcional si algún día usas toggle) */
 :root[data-theme="light"] {
   --bg: #ffffff;
   --bg-soft: #f7f8fa;
@@ -42,36 +56,38 @@ body {
   --card-border: #e5e7eb;
 }
 
-/* Fondo con gradientes */
+/* =========================
+   Fondo con gradientes
+   ========================= */
 body {
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, .15), transparent 60%),
-    radial-gradient(1000px 600px at 110% 10%, rgba(96, 165, 250, .18), transparent 60%),
+    radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, .12), transparent 60%),
+    radial-gradient(1000px 600px at 110% 10%, rgba(96, 165, 250, .14), transparent 60%),
     var(--bg);
   color: var(--text);
 }
 
-/* Contenedor */
+/* =========================
+   Utilidades / wrappers
+   ========================= */
 .wrap {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Navbar */
-.navbar {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(8px);
-  background: linear-gradient(180deg, rgba(0, 0, 0, .35), transparent);
-  z-index: 50;
+/* Offset para anclas con navbar fija (Bootstrap) */
+#proyectos,
+#contacto {
+  scroll-margin-top: 80px;
 }
 
-.navbar .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
+/* =========================
+   Navbar (cuando uses tu navbar propia)
+   ========================= */
+.navbar {
+  backdrop-filter: blur(8px);
+  z-index: 50;
 }
 
 .brand {
@@ -79,15 +95,6 @@ body {
   text-decoration: none;
   font-weight: 800;
   letter-spacing: .3px;
-}
-
-#themeToggle {
-  background: transparent;
-  border: 1px solid var(--card-border);
-  color: var(--text);
-  padding: 6px 10px;
-  border-radius: 10px;
-  cursor: pointer;
 }
 
 /* Links de navbar y foco accesible */
@@ -113,7 +120,15 @@ body {
   outline-offset: 3px;
 }
 
-/* Hero */
+/* Ajuste de contraste del header en tema claro */
+:root[data-theme="light"] .navbar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0));
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* =========================
+   Hero
+   ========================= */
 .hero {
   padding: 72px 0 36px;
   text-align: left;
@@ -121,7 +136,13 @@ body {
 
 .hero h1 {
   font-size: clamp(28px, 3.6vw, 46px);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 
 .hero .lead {
@@ -141,7 +162,8 @@ body {
   flex-wrap: wrap;
 }
 
-.btn {
+/* Botones gradiente opcionales (si no usas Bootstrap para esos) */
+.btn-gradient {
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color: #081018;
   font-weight: 700;
@@ -151,20 +173,15 @@ body {
   box-shadow: var(--shadow);
   text-decoration: none;
   min-height: 44px;
-  /* mejor clic en móvil */
 }
 
-.btn:hover {
+.btn-gradient:hover {
   filter: brightness(1.1);
 }
 
-.btn.ghost {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--card-border);
-}
-
-/* Secciones */
+/* =========================
+   Secciones
+   ========================= */
 .section {
   padding: 48px 0;
 }
@@ -174,7 +191,9 @@ body {
   margin-bottom: 16px;
 }
 
-/* Listas */
+/* =========================
+   Listas con bullets
+   ========================= */
 .bullets {
   list-style: disc;
   padding-left: 22px;
@@ -188,22 +207,31 @@ body {
   color: var(--brand-2);
 }
 
-/* Grid de proyectos */
+/* =========================
+   Grid custom (si no usas Bootstrap)
+   ========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 18px;
 }
 
+/* =========================
+   Tarjetas
+   ========================= */
 .card {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  padding: 18px;
   box-shadow: var(--shadow);
 }
 
-.card h3 {
+.card .card-body {
+  padding: 18px;
+}
+
+.card h3,
+.card h5 {
   margin-bottom: 8px;
 }
 
@@ -212,6 +240,7 @@ body {
   margin-bottom: 14px;
 }
 
+/* Badges & links dentro de cards */
 .tags {
   display: flex;
   gap: 8px;
@@ -228,17 +257,34 @@ body {
   border: 1px solid var(--card-border);
 }
 
-.links a {
+.card a {
   color: var(--brand-2);
   text-decoration: none;
   font-weight: 700;
 }
 
-.links a:hover {
+.card a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
+/* Caja clara “Contacto” — versión oscura legible */
+.bg-body {
+  background-color: #161f2d !important;
+  color: var(--text);
+}
+
+.bg-body a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.bg-body a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Footer
+   ========================= */
 .footer {
   padding: 32px 0;
   border-top: 1px solid var(--card-border);
@@ -246,7 +292,9 @@ body {
   text-align: center;
 }
 
-/* Transiciones suaves y preferencia de movimiento reducido */
+/* =========================
+   Transiciones suaves (y reduce-motion)
+   ========================= */
 * {
   transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
@@ -255,10 +303,4 @@ body {
   * {
     transition: none !important;
   }
-}
-
-/* Ajuste de contraste del header en tema claro */
-:root[data-theme="light"] .navbar {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0));
-  border-bottom: 1px solid var(--card-border);
 }

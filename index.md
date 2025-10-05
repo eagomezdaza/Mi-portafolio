@@ -1,13 +1,14 @@
 ---
 layout: default
-title: Portafolio ML — John Gómez
+title: Mi portafolio — John Gómez
 ---
 
 <!-- HERO -->
-<header class="container py-5" style="margin-top:48px">
+<header class="container py-5" style="margin-top:64px">
   <div class="row align-items-center">
     <div class="col-lg-8">
-      <h1 class="display-5 fw-bold mb-2">Portafolio de Machine Learning — John Gómez</h1>
+      <h1 class="display-5 fw-bold mb-2">Mi portafolio</h1>
+      <p class="subtitle">John Gómez</p>
       <p class="lead text-secondary">
         Modelos predictivos, visualización y despliegue reproducible (Docker & CI/CD).
       </p>
@@ -41,7 +42,10 @@ title: Portafolio ML — John Gómez
             <span class="badge bg-info text-dark">scikit-learn</span>
             <span class="badge bg-secondary">Colab</span>
           </div>
-          <a class="stretched-link" href="https://github.com/eagomezdaza/proyecto-wine" target="_blank" rel="noopener">Código →</a>
+          <div class="d-flex gap-3">
+            <a href="/Mi-portafolio/proyecto-wine/">Ver detalle →</a>
+            <a href="https://github.com/eagomezdaza/proyecto-wine" target="_blank" rel="noopener">Código</a>
+          </div>
         </div>
       </div>
     </div>
@@ -57,7 +61,10 @@ title: Portafolio ML — John Gómez
             <span class="badge bg-info text-dark">Docker</span>
             <span class="badge bg-secondary">Azure</span>
           </div>
-          <a class="stretched-link" href="https://github.com/eagomezdaza/Mod10-Evaluacion_Modular" target="_blank" rel="noopener">Código →</a>
+          <div class="d-flex gap-3">
+            <a href="/Mi-portafolio/mlops-nube/">Ver detalle →</a>
+            <a href="https://github.com/eagomezdaza/Mod10-Evaluacion_Modular" target="_blank" rel="noopener">Código</a>
+          </div>
         </div>
       </div>
     </div>
@@ -73,7 +80,10 @@ title: Portafolio ML — John Gómez
             <span class="badge bg-info text-dark">Docker</span>
             <span class="badge bg-secondary">sklearn</span>
           </div>
-          <a class="stretched-link" href="https://github.com/eagomezdaza/iris-flask-docker-api" target="_blank" rel="noopener">Código →</a>
+          <div class="d-flex gap-3">
+            <a href="/Mi-portafolio/proyecto-iris/">Ver detalle →</a>
+            <a href="https://github.com/eagomezdaza/iris-flask-docker-api" target="_blank" rel="noopener">Código</a>
+          </div>
         </div>
       </div>
     </div>
@@ -85,5 +95,21 @@ title: Portafolio ML — John Gómez
 <section id="contacto" class="container pb-5">
   <h2 class="mb-3 fw-bold">Contacto</h2>
   <div class="row g-3">
+    <div class="col-md-6">
+      <div class="p-3 border rounded-3 bg-body">
+        <p class="mb-1"><strong>Email:</strong> <a href="mailto:eagomezdaza@gmail.com">eagomezdaza@gmail.com</a></p>
+        <p class="mb-1"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/eagomezdaza/" target="_blank" rel="noopener">/in/eagomezdaza</a></p>
+        <p class="mb-0"><strong>GitHub:</strong> <a href="https://github.com/eagomezdaza" target="_blank" rel="noopener">@eagomezdaza</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-4 border-top text-muted">
+  © {{ site.time | date: "%Y" }} John Gómez — MIT License
+</footer>
+
+
+
 
 
