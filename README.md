@@ -33,34 +33,32 @@ Me interesa conectar la rigurosidad matemática con el desarrollo de soluciones 
 
 ## 📂 Proyectos Destacados
 
-### 🧩 [1. Clasificación de Flores — Dataset Iris](https://github.com/eagomezdaza/iris-flask-docker-api)
-**Flask + Docker + CI/CD**
-
-Desarrollo de una **API REST** contenedorizada para clasificar flores *Iris* usando un modelo **Random Forest**.  Incluye validaciones de entrada, endpoint de salud (`/health`), pruebas automáticas y pipeline en **GitHub Actions**.
-
-🔹 **Tecnologías:** Python, Flask, Docker, scikit-learn  
-🔹 **Resultado:** API funcional y desplegable con documentación y evidencias  
-🔹 **Reflexión:** Comprendí el flujo completo de un servicio ML reproducible — desde el modelo hasta el despliegue automatizado.
-
----
-
-### 🍷 [2. Clasificación de Vinos — Aprendizaje Supervisado](https://github.com/eagomezdaza/proyecto-wine)
-**Exploración + Modelado + Evaluación**
-
-Proyecto de clasificación supervisada usando el dataset **Wine** de *scikit-learn*, evaluando algoritmos como Regresión Logística, Random Forest y SVM con métricas de desempeño y validación cruzada.
+### 🍷 [Clasificación de vinos con aprendizaje supervisado en Python](https://github.com/eagomezdaza/proyecto-wine)
+Desarrollo de un flujo de **Machine Learning** orientado a la clasificación de tipos de vino, que incluye análisis exploratorio, preprocesamiento de datos y evaluación de modelos con **scikit-learn**.  
+Proyecto implementado en entorno **Google Colab** con enfoque en interpretabilidad de resultados.
 
 🔹 **Tecnologías:** Python, Pandas, Scikit-learn, Matplotlib  
-🔹 **Reflexión:** Aprendí a seleccionar modelos considerando trade-offs entre precisión e interpretabilidad.
+🔹 **Resultado:** Modelo entrenado y evaluado con métricas de desempeño (accuracy, matriz de confusión)  
+🔹 **Reflexión:** Comprendí la importancia del preprocesamiento y la selección de variables para modelos supervisados.
 
 ---
 
-### ☁️ [3. MLOps en la Nube — Despliegue Automatizado](https://github.com/eagomezdaza/Mod10-Evaluacion_Modular)
-**Docker + Azure + CI/CD**
-
-Implementación de un flujo **MLOps educativo**: modelo predictivo desplegado como **API Flask**,  contenedorizado con **Docker** y publicado en **Azure Container Apps**, con pipeline automatizado y versionado.
+### ☁️ [MLOps en la Nube: Despliegue automatizado de un modelo predictivo](https://github.com/eagomezdaza/Mod10-Evaluacion_Modular)
+Desarrollo de un sistema **MLOps** que integra un modelo de **Machine Learning** expuesto como **API Flask**, contenedizado con **Docker** y desplegado en **Azure**, siguiendo prácticas de automatización, versionado y actualización continua.
 
 🔹 **Tecnologías:** Flask, Docker, Azure CLI, GitHub Actions  
-🔹 **Reflexión:** Desarrollé competencias prácticas en integración continua y despliegue automatizado.
+🔹 **Resultado:** API funcional desplegada en la nube, con pipeline automatizado de CI/CD  
+🔹 **Reflexión:** Aprendí a implementar integración y despliegue continuo en entornos de producción simulados.
+
+---
+
+### 🌸 [Despliegue de modelo Iris como API Flask contenedorizada](https://github.com/eagomezdaza/iris-flask-docker-api)
+Desarrollo de una **API REST** con **Flask** que expone un modelo de clasificación del dataset *Iris*, incorporando validaciones, manejo de errores y pruebas automatizadas.  
+El sistema se ejecuta en un entorno **Docker** para portabilidad y despliegue reproducible.
+
+🔹 **Tecnologías:** Flask, Docker, scikit-learn, Streamlit  
+🔹 **Resultado:** API contenedorizada con endpoints `/predict` y `/health`, validada con pruebas locales y CI  
+🔹 **Reflexión:** Reforcé la comprensión del ciclo completo de MLOps, desde el entrenamiento hasta la entrega del servicio.
 
 ---
 
