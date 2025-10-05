@@ -444,3 +444,26 @@ main h1, main h2, main h3, main h4 {
 
 /* Un pelín más de espacio entre bloques */
 section + section, .gallery { margin-top: 10px; }
+
+
+/* === Sidebar "Información" más legible === */
+aside .card .card-body h5,
+.row .col-lg-4 .card .card-body h5 {
+  color: #ffffff !important;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+aside .card .card-body,
+.row .col-lg-4 .card .card-body {
+  color: #e6edf7 !important;      /* texto del panel */
+}
+
+aside .card .card-body a,
+.row .col-lg-4 .card .card-body a {
+  color: #8cc3ff !important;      /* links del panel */
+  text-decoration: none;
+}
+aside .card .card-body a:hover {
+  text-decoration: underline;
+}
