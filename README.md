@@ -1,83 +1,85 @@
 # Portafolio de Machine Learning — John Gómez
 
 ![Banner](https://img.shields.io/badge/PORTAFOLIO%20MACHINE%20LEARNING-4CAF50?style=for-the-badge&logo=github&logoColor=white)
-
-Bienvenido/a a mi portafolio digital.  
-Soy estudiante en formación en el área de **Machine Learning**, con interés en el análisis de datos, la construcción de modelos predictivos y el despliegue de soluciones prácticas.  
-
-Este portafolio reúne los proyectos desarrollados durante el curso, donde apliqué técnicas de aprendizaje automático y herramientas fundamentales en el campo.
-
----
-
-## 🚀 Tecnologías
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-3499CD?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-4D77CF?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=plotly&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-2E6E8E?style=for-the-badge&logo=plotly&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/CI/CD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 
 ---
 
 ## 👤 Presentación Personal
-- **Nombre:** John Gómez  
-- **Formación:** Aprendiz en Machine Learning  
-- **Intereses:** Ciencia de Datos, Inteligencia Artificial aplicada, Desarrollo de proyectos de predicción y clasificación.  
-- **Objetivo profesional:** Continuar desarrollando habilidades en Machine Learning para aplicarlas en proyectos reales de análisis y toma de decisiones.
+
+Soy **Matemático y Analista de Datos**, con formación en **Modelación Estadística** y **Geometría Diferencial**.  
+Actualmente me especializo en **Machine Learning**, **MLOps educativo** y **automatización de flujos de trabajo con Docker y CI/CD**.
+
+Me interesa conectar la rigurosidad matemática con el desarrollo de soluciones prácticas basadas en datos, combinando análisis, visualización y despliegue reproducible de modelos.
+
+📍 *Valparaíso, Chile*  
+🔗 [LinkedIn](https://www.linkedin.com/in/eagomezdaza/) · [GitHub](https://github.com/eagomezdaza) · [Correo](mailto:eagomezdaza@gmail.com)
+
+---
+## 🚀 Tecnologías Principales
+
+| Área | Herramientas |
+|------|---------------|
+| **Lenguajes** | Python · R · Bash |
+| **Machine Learning** | scikit-learn · pandas · numpy · matplotlib · seaborn |
+| **DevOps / MLOps** | Docker · Git · GitHub Actions · Azure |
+| **Entornos** | VS Code · Google Colab · JupyterLab |
+| **Otros** | LaTeX · Linux · Markdown |
 
 ---
 
-## 📂 Proyectos
+## 📂 Proyectos Destacados
 
-### 1. Clasificación de Flores — Dataset Iris
-- **Descripción:** Modelo de clasificación supervisada para predecir el tipo de flor (Setosa, Versicolor, Virginica) a partir de características morfológicas.  
-- **Objetivo:** Aplicar regresión logística y comparar desempeño con SVM y Random Forest.  
-- **Tecnologías:** Python, scikit-learn, Pandas, Matplotlib.  
-- **Código fuente:** [Repositorio en GitHub](#)  
-- **Reflexión:** Este proyecto me permitió entender el flujo completo de un problema de clasificación, desde la carga de datos hasta la evaluación de métricas como accuracy y matriz de confusión.
+### 🧩 [1. Clasificación de Flores — Dataset Iris](https://github.com/eagomezdaza/iris-flask-docker-api)
+**Flask + Docker + CI/CD**
 
----
+Desarrollo de una **API REST** contenedorizada para clasificar flores *Iris* usando un modelo **Random Forest**.  Incluye validaciones de entrada, endpoint de salud (`/health`), pruebas automáticas y pipeline en **GitHub Actions**.
 
-### 2. Predicción de Vinos — Dataset Wine
-- **Descripción:** Proyecto de clasificación supervisada usando el dataset Wine de scikit-learn para identificar la clase de vino según propiedades químicas.  
-- **Objetivo:** Evaluar distintos algoritmos (Regresión Logística, Random Forest, SVM) y seleccionar el mejor modelo mediante validación cruzada.  
-- **Tecnologías:** Python, scikit-learn, joblib.  
-- **Código fuente:** [Repositorio en GitHub](#)  
-- **Reflexión:** Aprendí la importancia de la validación cruzada y de la normalización de variables para mejorar la precisión de modelos basados en distancias.
+🔹 **Tecnologías:** Python, Flask, Docker, scikit-learn  
+🔹 **Resultado:** API funcional y desplegable con documentación y evidencias  
+🔹 **Reflexión:** Comprendí el flujo completo de un servicio ML reproducible — desde el modelo hasta el despliegue automatizado.
 
 ---
 
-### 3. Predicción de Diabetes — Dataset Pima Indians Diabetes
-- **Descripción:** Modelo predictivo para estimar la probabilidad de que una persona presente diabetes en función de características médicas.  
-- **Objetivo:** Comparar modelos de clasificación y evaluar sensibilidad/especificidad además de accuracy.  
-- **Tecnologías:** Python, scikit-learn, Seaborn.  
-- **Código fuente:** [Repositorio en GitHub](#)  
-- **Reflexión:** Este proyecto me permitió reflexionar sobre el balance entre precisión y sensibilidad, especialmente en problemas relacionados con salud.
+### 🍷 [2. Clasificación de Vinos — Aprendizaje Supervisado](https://github.com/eagomezdaza/proyecto-wine)
+**Exploración + Modelado + Evaluación**
+
+Proyecto de clasificación supervisada usando el dataset **Wine** de *scikit-learn*, evaluando algoritmos como Regresión Logística, Random Forest y SVM con métricas de desempeño y validación cruzada.
+
+🔹 **Tecnologías:** Python, Pandas, Scikit-learn, Matplotlib  
+🔹 **Reflexión:** Aprendí a seleccionar modelos considerando trade-offs entre precisión e interpretabilidad.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
-- **Lenguajes:** Python  
-- **Librerías ML:** scikit-learn, Pandas, NumPy, Matplotlib, Seaborn  
-- **Entornos:** Jupyter Notebook, Google Colab  
-- **Control de versiones:** Git y GitHub
+### ☁️ [3. MLOps en la Nube — Despliegue Automatizado](https://github.com/eagomezdaza/Mod10-Evaluacion_Modular)
+**Docker + Azure + CI/CD**
+
+Implementación de un flujo **MLOps educativo**: modelo predictivo desplegado como **API Flask**,  contenedorizado con **Docker** y publicado en **Azure Container Apps**, con pipeline automatizado y versionado.
+
+🔹 **Tecnologías:** Flask, Docker, Azure CLI, GitHub Actions  
+🔹 **Reflexión:** Desarrollé competencias prácticas en integración continua y despliegue automatizado.
 
 ---
 
-## 📁 Estructura del Proyecto
-```
+## 🧰 Estructura del Repositorio
+
+```bash
 Mi-portafolio/
-├──index.html
+├── index.html             # Página principal (GitHub Pages)
 ├── styles/
-│   ├── style.css
+│   ├── style.css          # Estilos personalizados
 ├── assets/
-│   ├── images/
-│   ├── icons/
-├── README.md
-└── LICENSE
+│   ├── images/            # Imágenes y capturas
+│   ├── icons/             # Iconos decorativos
+├── README.md              # Este archivo
+└── LICENSE                # Licencia MIT
 ```
+
+---
+
 
 ## 🌐 Enlace Online
 🔗 [Ver Portafolio Online](https://eagomezdaza.github.io/Mi-portafolio/)
