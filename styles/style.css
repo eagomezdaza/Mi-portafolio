@@ -341,3 +341,38 @@ Mejoras visuales de contraste y legibilidad
   color: #f1f6ff;
   letter-spacing: .2px;
 }
+
+/* ===== Overrides de contraste y marca ===== */
+
+/* Marca de la navbar: más clara y grande */
+.navbar .navbar-brand {
+  color: #f7fbff !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px;
+}
+
+/* Títulos de las cards: color casi blanco y sin desvanecimiento */
+.card .card-body .card-title,
+.card .card-title.fw-bold {
+  color: #f3f7ff !important;
+  opacity: 1 !important;
+  text-shadow: 0 0 10px rgba(96, 165, 250, .10);
+}
+
+/* Texto de la card un poco más claro */
+.card .card-text {
+  color: #c6cfdb !important;
+}
+
+/* Fondo y borde de card un poco más visibles */
+.card {
+  background: #141c2b !important;
+  border-color: #324257 !important;
+}
+
+/* Hover con leve elevación */
+.card:hover {
+  border-color: #4a6ea8 !important;
+  transform: translateY(-1px);
+  transition: transform .15s ease, border-color .2s ease;
+}
