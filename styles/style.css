@@ -1,50 +1,97 @@
-/* Reset mínimo */
-* {
-  box-sizing: border-box;
+/* =========================================================
+   Base & Reset (ligero y accesible)
+   ========================================================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:where(html) { scroll-behavior: smooth; }
+:where(body) {
   margin: 0;
-  padding: 0;
-}
-
-img {
-  max-width: 100%;
-  display: inline-block;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.12), transparent 60%),
+    radial-gradient(1000px 600px at 110% 10%, rgba(96,165,250,.14), transparent 60%),
+    var(--bg);
 }
 
-/* =========================
-   Variables de color (oscuro legible)
-   ========================= */
+:where(img) { max-width: 100%; display: inline-block; height: auto; }
+
+/* Accesibilidad básica */
+:where(:focus-visible) {
+  outline: 2px dashed var(--brand-2);
+  outline-offset: 3px;
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
+}
+
+/* =========================================================
+   Design Tokens (dark por defecto)
+   ========================================================= */
 :root {
-  /* Fondo original, atenuado para mejor visibilidad */
+  /* Paleta */
   --bg: #0f1520;
   --bg-soft: #121a24;
-
-  /* Texto más claro y secundario más legible */
   --text: #eef2f7;
   --muted: #bac4d2;
+  --brand: #60a5fa;   /* azul */
+  --brand-2: #22d3ee; /* cian */
 
-  /* Marca */
-  --brand: #60a5fa;
-  /* azul */
-  --brand-2: #22d3ee;
-  /* cian */
-
-  /* Tarjetas y bordes con mayor contraste */
+  /* Superficies */
   --card: #121826;
   --card-border: #253040;
 
+  /* Tipografía */
+  --h1: clamp(28px, 3.6vw, 46px);
+  --h2: clamp(22px, 2.5vw, 28px);
+  --lead: 1.125rem;
+
+  /* Dimensiones */
+  --radius: 16px;
+  --radius-pill: 999px;
+  --container: 1100px;
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 12px;
+  --space-4: 14px;
+  --space-5: 18px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 72px;
+
+  /* Efectos */
   --shadow: 0 10px 25px rgba(0, 0, 0, .35);
+  --elev: translateY(-1px);
+
+  /* Animación */
+  --t-fast: .15s ease;
+  --t-med: .25s ease;
+
+  /* Grid */
+  --grid-gap: 18px;
+  --grid-min: 260px;
 }
 
-/* Tema claro (opcional si algún día usas toggle) */
+/* Modo claro automático si el SO lo pide; data-theme tiene prioridad */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f7f8fa;
+    --text: #0f172a;
+    --muted: #475569;
+    --brand: #2563eb;
+    --brand-2: #06b6d4;
+    --card: #ffffff;
+    --card-border: #e5e7eb;
+  }
+}
+
+/* Forzar tema claro si se indica explícitamente */
 :root[data-theme="light"] {
   --bg: #ffffff;
   --bg-soft: #f7f8fa;
@@ -56,38 +103,34 @@ body {
   --card-border: #e5e7eb;
 }
 
-/* =========================
-   Fondo con gradientes
-   ========================= */
-body {
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, .12), transparent 60%),
-    radial-gradient(1000px 600px at 110% 10%, rgba(96, 165, 250, .14), transparent 60%),
-    var(--bg);
-  color: var(--text);
+/* Motion-safe */
+* { transition: background-color var(--t-med), color var(--t-med), border-color var(--t-med); }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
 
-/* =========================
-   Utilidades / wrappers
-   ========================= */
+/* =========================================================
+   Layout helpers
+   ========================================================= */
 .wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 20px;
 }
 
-/* Offset para anclas con navbar fija (Bootstrap) */
-#proyectos,
-#contacto {
-  scroll-margin-top: 80px;
-}
+/* Offset para anclas con navbar fija */
+#proyectos, #contacto { scroll-margin-top: 80px; }
 
-/* =========================
-   Navbar (cuando uses tu navbar propia)
-   ========================= */
+/* =========================================================
+   Navbar
+   ========================================================= */
 .navbar {
-  backdrop-filter: blur(8px);
-  z-index: 50;
+  position: sticky; top: 0; z-index: 50;
+  background: linear-gradient(180deg, rgba(16,22,33,.75), rgba(16,22,33,0));
+  border-bottom: 1px solid var(--card-border);
+}
+@supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+  .navbar { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 }
 
 .brand {
@@ -96,394 +139,186 @@ body {
   font-weight: 800;
   letter-spacing: .3px;
 }
-
-/* Links de navbar y foco accesible */
-.navbar nav {
-  display: flex;
-  gap: 16px;
-}
-
+.navbar nav { display: flex; gap: 16px; }
 .navbar nav a {
   color: var(--text);
   text-decoration: none;
   opacity: .9;
   font-weight: 600;
 }
+.navbar nav a:hover { opacity: 1; text-decoration: underline; }
 
-.navbar nav a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-:focus-visible {
-  outline: 2px dashed var(--brand-2);
-  outline-offset: 3px;
-}
-
-/* Ajuste de contraste del header en tema claro */
+/* Ajuste en tema claro */
 :root[data-theme="light"] .navbar {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0));
-  border-bottom: 1px solid var(--card-border);
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0));
 }
 
-/* =========================
+/* Compat con Bootstrap si está presente */
+.navbar .navbar-brand {
+  color: #f1f6ff !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px;
+}
+
+/* =========================================================
    Hero
-   ========================= */
-.hero {
-  padding: 72px 0 36px;
-  text-align: left;
-}
+   ========================================================= */
+.hero { padding: var(--space-9) 0 var(--space-6); text-align: left; }
+.hero h1 { font-size: var(--h1); margin-bottom: var(--space-1); }
+.subtitle, .hero .lead { color: var(--muted); }
+.subtitle { font-size: var(--lead); margin-bottom: var(--space-2); }
+.hero .lead { max-width: 800px; }
+.badges img { margin: 12px 8px 0 0; vertical-align: middle; }
+.cta { margin-top: var(--space-6); display: flex; gap: 12px; flex-wrap: wrap; }
 
-.hero h1 {
-  font-size: clamp(28px, 3.6vw, 46px);
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  font-size: 1.125rem;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
-.hero .lead {
-  color: var(--muted);
-  max-width: 800px;
-}
-
-.badges img {
-  margin: 12px 8px 0 0;
-  vertical-align: middle;
-}
-
-.cta {
-  margin-top: 24px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* Botones gradiente opcionales (si no usas Bootstrap para esos) */
+/* Botón gradiente */
 .btn-gradient {
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #081018;
-  font-weight: 700;
-  border: 0;
-  padding: 12px 18px;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  min-height: 44px;
+  color: #081018; font-weight: 700; border: 0;
+  padding: 12px 18px; border-radius: 12px;
+  box-shadow: var(--shadow); text-decoration: none; min-height: 44px;
 }
+.btn-gradient:hover { filter: brightness(1.1); }
 
-.btn-gradient:hover {
-  filter: brightness(1.1);
-}
-
-/* =========================
+/* =========================================================
    Secciones
-   ========================= */
-.section {
-  padding: 48px 0;
-}
+   ========================================================= */
+.section { padding: var(--space-8) 0; }
+.section h2 { font-size: var(--h2); margin-bottom: var(--space-3); }
 
-.section h2 {
-  font-size: clamp(22px, 2.5vw, 28px);
-  margin-bottom: 16px;
-}
+/* =========================================================
+   Listas
+   ========================================================= */
+.bullets { list-style: disc; padding-left: 22px; }
+.bullets li { margin: var(--space-1) 0; }
+.bullets li::marker { color: var(--brand-2); }
 
-/* =========================
-   Listas con bullets
-   ========================= */
-.bullets {
-  list-style: disc;
-  padding-left: 22px;
-}
-
-.bullets li {
-  margin: 6px 0;
-}
-
-.bullets li::marker {
-  color: var(--brand-2);
-}
-
-/* =========================
-   Grid custom (si no usas Bootstrap)
-   ========================= */
+/* =========================================================
+   Grid (si no hay Bootstrap)
+   ========================================================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min), 1fr));
+  gap: var(--grid-gap);
 }
 
-/* =========================
-   Tarjetas
-   ========================= */
+/* =========================================================
+   Cards (unificadas)
+   ========================================================= */
 .card {
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: transform var(--t-fast), border-color var(--t-med);
+}
+.card:hover { border-color: #4a6ea8; transform: var(--elev); }
+
+.card .card-body { padding: var(--space-5); color: var(--text); }
+.card h3, .card h5 { margin-bottom: var(--space-2); }
+.card p { color: var(--muted); margin-bottom: var(--space-4); }
+
+/* Títulos de card más brillantes y con sutil glow */
+.card .card-title,
+.card .card-title.fw-bold {
+  color: #f3f7ff !important;
+  text-shadow: 0 0 10px rgba(96,165,250,.10);
 }
 
-.card .card-body {
-  padding: 18px;
-}
-
-.card h3,
-.card h5 {
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-
-/* Badges & links dentro de cards */
-.tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
-}
-
+/* Etiquetas */
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: var(--space-4); }
 .tags span {
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(96, 165, 250, .12);
-  color: var(--text);
-  border: 1px solid var(--card-border);
+  font-size: 12px; padding: 6px 10px; border-radius: var(--radius-pill);
+  background: rgba(96,165,250,.12); color: var(--text); border: 1px solid var(--card-border);
 }
 
+/* Enlaces dentro de cards */
 .card a {
-  color: var(--brand-2);
-  text-decoration: none;
+  color: #9ecbff !important;
+  text-decoration-color: rgba(158,203,255,.4);
   font-weight: 700;
 }
+.card a:hover { color: #cfe5ff !important; text-decoration: underline; }
 
-.card a:hover {
-  text-decoration: underline;
-}
-
-/* Caja clara “Contacto” — versión oscura legible */
-.bg-body {
-  background-color: #161f2d !important;
+/* =========================================================
+   Tablas (Markdown/Bootstrap)
+   ========================================================= */
+.table,
+.markdown table {
+  width: 100%;
   color: var(--text);
+  border-collapse: collapse;
 }
+.table thead th,
+.markdown thead th { border-bottom: 2px solid var(--card-border); }
+.table td, .table th,
+.markdown table td, .markdown table th { border-color: var(--card-border); padding: 10px 12px; }
+.table-hover tbody tr:hover,
+.markdown tbody tr:hover { background: rgba(96,165,250,.08); }
+.table-striped tbody tr:nth-of-type(odd) { background: rgba(96,165,250,.04); }
 
-.bg-body a {
-  color: #60a5fa;
-  text-decoration: none;
+/* =========================================================
+   Breadcrumbs & Botones (compat Bootstrap)
+   ========================================================= */
+.breadcrumb .breadcrumb-item a { color: #8cc3ff; text-decoration: none; }
+.breadcrumb .breadcrumb-item a:hover { text-decoration: underline; }
+.breadcrumb .breadcrumb-item.active { color: #d6deea; }
+
+.btn-outline-primary { border-color: #4a6ea8; color: #cfe5ff; }
+.btn-outline-primary:hover { background: #254066; color: #fff; }
+
+/* =========================================================
+   Sección Contacto (bloque claro en dark)
+   ========================================================= */
+.bg-body { background-color: #161f2d !important; color: var(--text); }
+.bg-body a { color: #60a5fa; text-decoration: none; }
+.bg-body a:hover { text-decoration: underline; }
+
+/* =========================================================
+   Galería de capturas
+   ========================================================= */
+.gallery .col-md-6 { display: flex; }
+.gallery .figure { width: 100%; }
+.gallery .figure img {
+  display: block; width: 100%; height: auto;
+  background: var(--bg-soft); padding: 8px;
+  border: 1px solid var(--card-border); border-radius: 12px;
 }
+.figure-caption { color: var(--muted); margin-top: 6px; }
+section + section, .gallery { margin-top: 10px; }
 
-.bg-body a:hover {
-  text-decoration: underline;
+/* =========================================================
+   Sidebar “Información” (una sola versión, sin duplicados)
+   ========================================================= */
+aside .card .card-body h5,
+.row .col-lg-4 .card .card-body h5 {
+  color: #ffffff !important; font-weight: 800; letter-spacing: .2px;
 }
+aside .card .card-body,
+.row .col-lg-4 .card .card-body { color: #e6edf7 !important; }
+aside .card .card-body a,
+.row .col-lg-4 .card .card-body a {
+  color: #8cc3ff !important; text-decoration: none;
+}
+aside .card .card-body a:hover { text-decoration: underline; }
 
-/* =========================
+/* =========================================================
    Footer
-   ========================= */
+   ========================================================= */
 .footer {
-  padding: 32px 0;
+  padding: var(--space-7) 0;
   border-top: 1px solid var(--card-border);
   color: var(--muted);
   text-align: center;
 }
 
-/* =========================
-   Transiciones suaves (y reduce-motion)
-   ========================= */
-* {
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+/* =========================================================
+   Utilidades diversas
+   ========================================================= */
+.hidden { display: none !important; }
+
+/* Minimizar desenfoques en equipos débiles */
+@media (prefers-reduced-transparency: reduce) {
+  .navbar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-}
-
-/* =========================
-Mejoras visuales de contraste y legibilidad 
-  ========================= */
-
-/* Títulos de cards más brillantes y con sutil glow */
-.card .card-title {
-  color: #eaf2ff;
-  text-shadow: 0 0 10px rgba(96, 165, 250, .12);
-  letter-spacing: .2px;
-}
-
-/* Borde y elevación al hover para destacar cada proyecto */
-.card:hover {
-  border-color: #3a506b;
-  transform: translateY(-1px);
-}
-
-/* Breadcrumbs con buen contraste en modo oscuro */
-.breadcrumb .breadcrumb-item a {
-  color: #8cc3ff;
-  text-decoration: none;
-}
-
-.breadcrumb .breadcrumb-item a:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb .breadcrumb-item.active {
-  color: #d6deea;
-}
-
-/* Marca (navbar) ligeramente más grande y clara */
-.navbar .navbar-brand {
-  color: #f1f6ff;
-  letter-spacing: .2px;
-}
-
-/* ===== Overrides de contraste y marca ===== */
-
-/* Marca de la navbar: más clara y grande */
-.navbar .navbar-brand {
-  color: #f7fbff !important;
-  font-weight: 800 !important;
-  letter-spacing: .2px;
-}
-
-/* Títulos de las cards: color casi blanco y sin desvanecimiento */
-.card .card-body .card-title,
-.card .card-title.fw-bold {
-  color: #f3f7ff !important;
-  opacity: 1 !important;
-  text-shadow: 0 0 10px rgba(96, 165, 250, .10);
-}
-
-/* Texto de la card un poco más claro */
-.card .card-text {
-  color: #c6cfdb !important;
-}
-
-/* Fondo y borde de card un poco más visibles */
-.card {
-  background: #141c2b !important;
-  border-color: #324257 !important;
-}
-
-/* Hover con leve elevación */
-.card:hover {
-  border-color: #4a6ea8 !important;
-  transform: translateY(-1px);
-  transition: transform .15s ease, border-color .2s ease;
-}
-
-/* Tablas con Bootstrap en tema oscuro */
-.table { color: var(--text); }
-.table thead th { border-bottom: 2px solid var(--card-border); }
-.table td, .table th { border-color: var(--card-border); }
-.table-hover tbody tr:hover { background: rgba(96,165,250,.08); }
-.table-striped tbody tr:nth-of-type(odd) { background: rgba(96,165,250,.04); }
-
-/* ====== Mejora de contraste en proyecto ====== */
-
-/* Títulos y subtítulos del contenido */
-main h1, main h2, main h3, main h4 {
-  color: #eaf2ff; /* más blanco en tema oscuro */
-}
-
-/* Tarjeta lateral (Información) */
-.card {
-  background: #141c2b !important;
-  border-color: #2f3e54 !important;
-}
-.card .card-body {
-  color: var(--text);
-}
-
-/* Links dentro de tarjetas: mayor contraste */
-.card a {
-  color: #9ecbff !important;            /* link más claro */
-  text-decoration-color: rgba(158,203,255,.4);
-}
-.card a:hover {
-  color: #cfe5ff !important;
-  text-decoration: underline;
-}
-
-/* Breadcrumb y botones */
-.breadcrumb a { color: #bcd6ff !important; }
-.btn-outline-primary { border-color: #4a6ea8; color: #cfe5ff; }
-.btn-outline-primary:hover { background:#254066; color: #fff; }
-
-/* ====== Tabla bonita (Markdown o HTML) ====== */
-.table { color: var(--text); }
-.table thead th { border-bottom: 2px solid var(--card-border); }
-.table td, .table th { border-color: var(--card-border); }
-.table-hover tbody tr:hover { background: rgba(96,165,250,.08); }
-
-/* Por si la tabla es Markdown puro (sin clases) */
-.markdown table { width: 100%; border-collapse: collapse; }
-.markdown table th, .markdown table td {
-  padding: 10px 12px; border-bottom: 1px solid var(--card-border);
-}
-.markdown thead th { border-bottom: 2px solid var(--card-border); }
-
-/* ====== Galería de capturas ====== */
-.gallery .col-md-6 { display: flex; }
-.gallery .figure { width: 100%; }
-.gallery .figure img {
-  display: block;
-  width: 100%;
-  height: auto;               /* no deformar */
-  background: var(--bg-soft); /* leve fondo */
-  padding: 8px;
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-}
-.figure-caption { color: var(--muted); margin-top: 6px; }
-
-/* Un pelín más de espacio entre bloques */
-section + section, .gallery { margin-top: 10px; }
-
-
-/* === Sidebar "Información" más legible === */
-aside .card .card-body h5,
-.row .col-lg-4 .card .card-body h5 {
-  color: #ffffff !important;
-  font-weight: 800;
-  letter-spacing: .2px;
-}
-
-aside .card .card-body,
-.row .col-lg-4 .card .card-body {
-  color: #e6edf7 !important;      /* texto del panel */
-}
-
-aside .card .card-body a,
-.row .col-lg-4 .card .card-body a {
-  color: #8cc3ff !important;      /* links del panel */
-  text-decoration: none;
-}
-aside .card .card-body a:hover {
-  text-decoration: underline;
-}
-
-/* Sidebar "Información" más legible */
-aside .card .card-body h5,
-.row .col-lg-4 .card .card-body h5 {
-  color: #ffffff !important;
-  font-weight: 800;
-  letter-spacing: .2px;
-}
-aside .card .card-body,
-.row .col-lg-4 .card .card-body {
-  color: #e6edf7 !important;
-}
-aside .card .card-body a,
-.row .col-lg-4 .card .card-body a {
-  color: #8cc3ff !important;
-  text-decoration: none;
-}
-aside .card .card-body a:hover {
-  text-decoration: underline;
-}
