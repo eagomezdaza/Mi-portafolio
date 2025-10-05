@@ -3,5 +3,87 @@ layout: default
 title: Portafolio ML — John Gómez
 ---
 
-{% include_relative README.md %}
+<!-- HERO -->
+<header class="container py-5" style="margin-top:48px">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <h1 class="display-5 fw-bold mb-2">Portafolio de Machine Learning — John Gómez</h1>
+      <p class="lead text-secondary">
+        Modelos predictivos, visualización y despliegue reproducible (Docker & CI/CD).
+      </p>
+      <div class="d-flex gap-2 flex-wrap mt-3">
+        <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54">
+        <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white">
+        <img alt="CI/CD" src="https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white">
+      </div>
+      <div class="mt-4 d-flex gap-2">
+        <a class="btn btn-primary btn-lg" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn-outline-secondary btn-lg" href="https://github.com/eagomezdaza" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-outline-success btn-lg" href="https://www.linkedin.com/in/eagomezdaza/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="container pb-5">
+  <h2 class="mb-4 fw-bold">Proyectos</h2>
+  <div class="row g-3">
+
+    <!-- WINE -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Wine — Clasificación</h5>
+          <p class="card-text text-secondary">Clasificación de vinos con EDA, preprocesamiento y evaluación.</p>
+          <div class="d-flex gap-2 small mb-2">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-info text-dark">scikit-learn</span>
+            <span class="badge bg-secondary">Colab</span>
+          </div>
+          <a class="stretched-link" href="https://github.com/eagomezdaza/proyecto-wine" target="_blank" rel="noopener">Código →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MLOPS EN LA NUBE -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">MLOps en la Nube</h5>
+          <p class="card-text text-secondary">API Flask contenedorizada y desplegada en Azure con CI/CD.</p>
+          <div class="d-flex gap-2 small mb-2">
+            <span class="badge bg-primary">Flask</span>
+            <span class="badge bg-info text-dark">Docker</span>
+            <span class="badge bg-secondary">Azure</span>
+          </div>
+          <a class="stretched-link" href="https://github.com/eagomezdaza/Mod10-Evaluacion_Modular" target="_blank" rel="noopener">Código →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- IRIS API -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Iris — API Flask</h5>
+          <p class="card-text text-secondary">Modelo de Iris expuesto como API REST con validaciones.</p>
+          <div class="d-flex gap-2 small mb-2">
+            <span class="badge bg-primary">Flask</span>
+            <span class="badge bg-info text-dark">Docker</span>
+            <span class="badge bg-secondary">sklearn</span>
+          </div>
+          <a class="stretched-link" href="https://github.com/eagomezdaza/iris-flask-docker-api" target="_blank" rel="noopener">Código →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="container pb-5">
+  <h2 class="mb-3 fw-bold">Contacto</h2>
+  <div class="row g-3">
+
 

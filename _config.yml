@@ -1,12 +1,13 @@
 title: Mi portafolio
 theme: jekyll-theme-primer
+markdown: kramdown
 exclude:
   - venv
   - .venv
   - node_modules
   - .github
-  - README.md
-  - LICENSE
   - Gemfile
   - Gemfile.lock
   - .gitignore
+  - LICENSE
+
