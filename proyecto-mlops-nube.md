@@ -50,35 +50,11 @@ Incluye validación de entradas, logging estructurado y métricas para monitoreo
 ---
 
 ## Endpoints principales
-<div class="table-responsive">
-<table class="table table-sm table-hover align-middle">
-  <thead>
-    <tr>
-      <th>Método</th>
-      <th>Endpoint</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>GET</code></td>
-      <td><code>/health</code></td>
-      <td>Estado del modelo y metadatos</td>
-    </tr>
-    <tr>
-      <td><code>POST</code></td>
-      <td><code>/predict</code></td>
-      <td>Predicción a partir de 30 features</td>
-    </tr>
-    <tr>
-      <td><code>GET</code></td>
-      <td><code>/metrics</code></td>
-      <td>Exposición de métricas Prometheus</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+| Método | Endpoint | Descripción |
+|:-------|:----------|:-------------|
+| `GET` | `/health` | Estado del modelo y metadatos |
+| `POST` | `/predict` | Predicción a partir de 30 features |
+| `GET` | `/metrics` | Exposición de métricas Prometheus |
 
 > Ejemplo:  
 > ```bash
@@ -111,7 +87,6 @@ El pipeline de **GitHub Actions** automatiza pruebas, construcción y publicaci�
 | Throughput     | 50 req/s |
 | Uptime         | 99.9 % |
 | Tamaño imagen  | 186 MB |
-{: .table .table-sm .table-hover .align-middle}
 
 > Valores medidos con monitoreo básico de contenedor en Azure.
 
