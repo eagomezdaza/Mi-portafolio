@@ -55,6 +55,7 @@ Incluye validación de entradas, logging estructurado y métricas para monitoreo
 | `GET` | `/health` | Estado del modelo y metadatos |
 | `POST` | `/predict` | Predicción a partir de 30 features |
 | `GET` | `/metrics` | Exposición de métricas Prometheus |
+{: .table .table-sm .table-hover .align-middle}
 
 > Ejemplo:  
 > ```bash
