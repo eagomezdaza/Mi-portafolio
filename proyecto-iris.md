@@ -1,3 +1,4 @@
+```markdown
 ---
 layout: project
 title: Iris — API Flask & Docker
@@ -27,34 +28,27 @@ Incluye una interfaz **Streamlit** para visualización de predicciones y un **pi
 ---
 
 ## Cómo ejecutar
-
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/eagomezdaza/iris-flask-docker-api
    cd iris-flask-docker-api
    ```
-
 2. Instalar dependencias (entorno local):
    ```bash
    python -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
    ```
-
 3. Ejecutar la API:
    ```bash
    python app.py
    ```
-
-   Endpoint principal:  
-   `http://127.0.0.1:5002`
-
+   Endpoint principal: `http://127.0.0.1:5002`
 4. O bien construir y ejecutar el contenedor Docker:
    ```bash
    docker build -t ml-api-iris .
    docker run -d --name irisapi -p 5002:5002 ml-api-iris
    ```
-
 5. Validar su funcionamiento:
    ```bash
    curl -X POST http://127.0.0.1:5002/predict \
@@ -65,7 +59,6 @@ Incluye una interfaz **Streamlit** para visualización de predicciones y un **pi
 ---
 
 ## Estructura del proyecto
-
 ```
 iris-flask-docker-api/
 ├── app.py
@@ -88,7 +81,6 @@ iris-flask-docker-api/
 ---
 
 ## Resultados y evidencias
-
 <div class="gallery row g-3">
   <div class="col-md-6">
     <figure class="figure w-100">
@@ -106,7 +98,6 @@ iris-flask-docker-api/
       <figcaption class="figure-caption">Prueba de endpoints `/health` y `/predict` en entorno local</figcaption>
     </figure>
   </div>
-
   <div class="col-md-6">
     <figure class="figure w-100">
       <img class="img-fluid rounded shadow capture"
@@ -115,7 +106,6 @@ iris-flask-docker-api/
       <figcaption class="figure-caption">Contenedor Docker saludable (`HEALTHY`) en ejecución</figcaption>
     </figure>
   </div>
-
   <div class="col-md-6">
     <figure class="figure w-100">
       <img class="img-fluid rounded shadow capture"
@@ -129,7 +119,6 @@ iris-flask-docker-api/
 ---
 
 ## Conclusiones
-
 - La **API Flask** responde correctamente a los endpoints `/`, `/health` y `/predict`, validando entradas JSON.  
 - El flujo **Dockerizado** permite despliegue reproducible y verificación de salud del contenedor.  
 - **GitHub Actions** automatiza las pruebas y el build, garantizando integridad continua.  
@@ -138,8 +127,8 @@ iris-flask-docker-api/
 ---
 
 ## Próximos pasos
-
 - Incorporar **autenticación básica** en la API.  
 - Publicar la imagen en **Docker Hub**.  
 - Integrar despliegue continuo en **Azure Container Apps** o **Render**.  
 - Extender el flujo CI/CD con tests de integración.
+```

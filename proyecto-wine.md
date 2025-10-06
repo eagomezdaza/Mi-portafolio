@@ -1,3 +1,4 @@
+```markdown
 ---
 layout: project
 title: Wine — Clasificación
@@ -22,6 +23,8 @@ tags: [Python, scikit-learn, CV]
 Proyecto de aprendizaje supervisado para clasificar tipos de vino utilizando el dataset **Wine** de UCI.  
 Incluye análisis exploratorio, preprocesamiento (escalado y codificación), validación cruzada y comparación de modelos.
 
+---
+
 ## Cómo ejecutar
 1. Abre el repositorio: <a href="https://github.com/eagomezdaza/proyecto-wine" target="_blank" rel="noopener">proyecto-wine</a>  
 2. Ejecuta el notebook en Google Colab o localmente:
@@ -35,14 +38,12 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 ---
 
 ## Métricas
-
 | Modelo                    | Accuracy | F1-macro | Precision | Recall |
 |:------------------------- | -------: | -------: | --------: | -----: |
 | Regresión Logística (OVR) | 0.97     | 0.96     | 0.97      | 0.96   |
 | SVM (RBF)                 | 0.96     | 0.95     | 0.96      | 0.95   |
 | Random Forest             | 0.98     | 0.97     | 0.98      | 0.97   |
 {: .table .table-sm .table-hover .align-middle}
-
 
 > Las métricas se calcularon con validación cruzada estratificada (`cv=5`) y evaluación independiente en conjunto de prueba (30%).
 
@@ -52,7 +53,7 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 <div class="gallery row g-3">
   <div class="col-md-6">
     <figure class="figure w-100">
-      <img class="img-fluid rounded border capture"
+      <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
            alt="Matriz de confusión" loading="lazy" decoding="async">
       <figcaption class="figure-caption">Matriz de confusión — desempeño por clase</figcaption>
@@ -60,15 +61,13 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
   </div>
   <div class="col-md-6">
     <figure class="figure w-100">
-      <img class="img-fluid rounded border capture"
+      <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
            alt="Curvas ROC" loading="lazy" decoding="async">
       <figcaption class="figure-caption">Curvas ROC (OVR) para las tres clases</figcaption>
     </figure>
   </div>
 </div>
-
-
 
 ---
 
@@ -83,3 +82,4 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 - Implementar **GridSearchCV** para afinar hiperparámetros.  
 - Agregar interpretabilidad con **SHAP** y análisis de importancia de variables.  
 - Documentar resultados comparativos en formato reproducible (`.ipynb` y `.html`).
+```
