@@ -49,20 +49,28 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 ---
 
 ## Capturas de resultados
-<div class="gallery row g-3">
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded border" src="{{ site.baseurl }}/assets/images/wine/confusion-matrix.png" alt="Matriz de confusión">
-      <figcaption class="figure-caption">Matriz de confusión — desempeño por clase</figcaption>
-    </figure>
-  </div>
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded border" src="{{ site.baseurl }}/assets/images/wine/roc-curves.png" alt="Curvas ROC">
-      <figcaption class="figure-caption">Curvas ROC (One-vs-Rest) para las tres clases</figcaption>
-    </figure>
-  </div>
+<div class="gallery">
+  <figure class="shot">
+    <img
+      src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
+      alt="Matriz de confusión"
+      loading="lazy"
+      decoding="async"
+    >
+    <figcaption>Matriz de confusión — desempeño por clase</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <img
+      src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
+      alt="Curvas ROC"
+      loading="lazy"
+      decoding="async"
+    >
+    <figcaption>Curvas ROC (One-vs-Rest) para las tres clases</figcaption>
+  </figure>
 </div>
+
 
 
 ---
