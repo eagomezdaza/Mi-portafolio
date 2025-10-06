@@ -36,12 +36,13 @@ jupyter notebook
 ```
 
 ## Métricas
+```md
 | Modelo                    | Accuracy | F1-macro | Precision | Recall |
 |:------------------------- | -------: | -------: | --------: | -----: |
 | Regresión Logística (OVR) | 0.97     | 0.96     | 0.97      | 0.96   |
 | SVM (RBF)                 | 0.96     | 0.95     | 0.96      | 0.95   |
 | Random Forest             | 0.98     | 0.97     | 0.98      | 0.97   |
-{: .table .table-sm .table-hover .align-middle}
+```
 
 > Las métricas se calcularon con validación cruzada estratificada (`cv=5`) y evaluación independiente en conjunto de prueba (30%).
 
@@ -52,18 +53,24 @@ jupyter notebook
       <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
            alt="Matriz de confusión" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">Matriz de confusión — desempeño por clase</figcaption>
+      <figcaption class="figure-caption">
+        Matriz de confusión — desempeño por clase
+      </figcaption>
     </figure>
   </div>
+
   <div class="col-md-6">
     <figure class="figure w-100">
       <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
            alt="Curvas ROC" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">Curvas ROC (OVR) para las tres clases</figcaption>
+      <figcaption class="figure-caption">
+        Curvas ROC (OVR) para las tres clases
+      </figcaption>
     </figure>
   </div>
 </div>
+
 
 ---
 

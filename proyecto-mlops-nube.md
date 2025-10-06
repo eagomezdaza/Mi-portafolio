@@ -49,19 +49,22 @@ make run-docker
 
 ---
 
+```md
 ## Endpoints principales
 | Método | Endpoint | Descripción |
 |:-------|:----------|:-------------|
 | `GET` | `/health` | Estado del modelo y metadatos |
 | `POST` | `/predict` | Predicción a partir de 30 features |
 | `GET` | `/metrics` | Exposición de métricas Prometheus |
+```
 
 > Ejemplo:
-> ```bash
-> curl -X POST http://127.0.0.1:5000/predict \
->   -H "Content-Type: application/json" \
->   -d @tests/data/sample.json
-> ```
+
+```bash
+curl -X POST http://127.0.0.1:5000/predict \
+  -H "Content-Type: application/json" \
+  -d @tests/data/sample.json
+```
 
 ---
 
@@ -74,12 +77,14 @@ El pipeline de **GitHub Actions** automatiza pruebas, construcción y publicaci�
 2. `make update-aca RG=rg-evalmod ACR=acrevalmod`  
    → Actualiza el contenedor en producción.  
 3. Monitoreo con:
+
 ```bash
 az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 ```
 
 ---
 
+```md
 ## Métricas de despliegue
 | Métrica        | Valor |
 |---------------:|:-----:|
@@ -87,6 +92,7 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 | Throughput     | 50 req/s |
 | Uptime         | 99.9 % |
 | Tamaño imagen  | 186 MB |
+```
 
 > Valores medidos con monitoreo básico de contenedor en Azure.
 
@@ -99,15 +105,20 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
       <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/mlops/pipeline-actions.png' | relative_url }}"
            alt="Pipeline GitHub Actions" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">Pipeline automatizado en GitHub Actions — ejecución de pruebas, build y deploy hacia Azure.</figcaption>
+      <figcaption class="figure-caption">
+        Pipeline automatizado en GitHub Actions — ejecución de pruebas, build y deploy hacia Azure.
+      </figcaption>
     </figure>
   </div>
+
   <div class="col-md-6">
     <figure class="figure w-100">
       <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/mlops/azure-deploy.png' | relative_url }}"
            alt="Despliegue en Azure Container Apps" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">Despliegue exitoso del contenedor en Azure Container Apps con endpoint público.</figcaption>
+      <figcaption class="figure-caption">
+        Despliegue exitoso del contenedor en Azure Container Apps con endpoint público.
+      </figcaption>
     </figure>
   </div>
 
@@ -116,18 +127,24 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
       <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/mlops/logs-monitor.png' | relative_url }}"
            alt="Monitoreo de logs en Azure" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">Logs JSON estructurados y métricas de rendimiento accesibles desde Azure Monitor.</figcaption>
+      <figcaption class="figure-caption">
+        Logs JSON estructurados y métricas de rendimiento accesibles desde Azure Monitor.
+      </figcaption>
     </figure>
   </div>
+
   <div class="col-md-6">
     <figure class="figure w-100">
       <img class="img-fluid rounded shadow capture"
            src="{{ '/assets/images/mlops/container-status.png' | relative_url }}"
            alt="Estado del contenedor" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">Verificación del estado HEALTHY del contenedor y métricas de disponibilidad.</figcaption>
+      <figcaption class="figure-caption">
+        Verificación del estado HEALTHY del contenedor y métricas de disponibilidad.
+      </figcaption>
     </figure>
   </div>
 </div>
+
 
 ---
 
