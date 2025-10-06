@@ -28,32 +28,32 @@ Incluye una interfaz **Streamlit** para visualización de predicciones y un **pi
 
 ## Cómo ejecutar
 1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/eagomezdaza/iris-flask-docker-api
-   cd iris-flask-docker-api
-   ```
+```bash
+git clone https://github.com/eagomezdaza/iris-flask-docker-api
+cd iris-flask-docker-api
+```
 2. Instalar dependencias (entorno local):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 3. Ejecutar la API:
-   ```bash
-   python app.py
-   ```
-   Endpoint principal: `http://127.0.0.1:5002`
+```bash
+python app.py
+```
+Endpoint principal: `http://127.0.0.1:5002`
 4. O bien construir y ejecutar el contenedor Docker:
-   ```bash
-   docker build -t ml-api-iris .
-   docker run -d --name irisapi -p 5002:5002 ml-api-iris
-   ```
+```bash
+docker build -t ml-api-iris .
+docker run -d --name irisapi -p 5002:5002 ml-api-iris
+```
 5. Validar su funcionamiento:
-   ```bash
-   curl -X POST http://127.0.0.1:5002/predict \
-        -H "Content-Type: application/json" \
-        -d '{"features":[5.1, 3.5, 1.4, 0.2]}'
-   ```
+```bash
+curl -X POST http://127.0.0.1:5002/predict \
+     -H "Content-Type: application/json" \
+     -d '{"features":[5.1, 3.5, 1.4, 0.2]}'
+```
 
 ---
 

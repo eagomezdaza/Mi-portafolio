@@ -27,14 +27,13 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 ## Cómo ejecutar
 1. Abre el repositorio: <a href="https://github.com/eagomezdaza/proyecto-wine" target="_blank" rel="noopener">proyecto-wine</a>  
 2. Ejecuta el notebook en Google Colab o localmente:
-   ```bash
-   git clone https://github.com/eagomezdaza/proyecto-wine
-   cd proyecto-wine
-   pip install -r requirements.txt
-   jupyter notebook
-   ```
 
----
+```bash
+git clone https://github.com/eagomezdaza/proyecto-wine
+cd proyecto-wine
+pip install -r requirements.txt
+jupyter notebook
+```
 
 ## Métricas
 | Modelo                    | Accuracy | F1-macro | Precision | Recall |
@@ -45,8 +44,6 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 {: .table .table-sm .table-hover .align-middle}
 
 > Las métricas se calcularon con validación cruzada estratificada (`cv=5`) y evaluación independiente en conjunto de prueba (30%).
-
----
 
 ## Capturas de resultados
 <div class="gallery row g-3">

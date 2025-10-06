@@ -27,25 +27,25 @@ Incluye validación de entradas, logging estructurado y métricas para monitoreo
 
 ## Cómo ejecutar localmente
 1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/eagomezdaza/Mod10-Evaluacion_Modular
-   cd Mod10-Evaluacion_Modular
-   ```
+```bash
+git clone https://github.com/eagomezdaza/Mod10-Evaluacion_Modular
+cd Mod10-Evaluacion_Modular
+```
 2. Entrenar el modelo:
-   ```bash
-   make train
-   ```
+```bash
+make train
+```
 3. Ejecutar la API:
-   ```bash
-   make run
-   ```
-   Acceso local en `http://127.0.0.1:5000`
+```bash
+make run
+```
+Acceso local en `http://127.0.0.1:5000`
 
 4. Construir y ejecutar contenedor Docker:
-   ```bash
-   make build
-   make run-docker
-   ```
+```bash
+make build
+make run-docker
+```
 
 ---
 
@@ -56,7 +56,7 @@ Incluye validación de entradas, logging estructurado y métricas para monitoreo
 | `POST` | `/predict` | Predicción a partir de 30 features |
 | `GET` | `/metrics` | Exposición de métricas Prometheus |
 
-> Ejemplo:  
+> Ejemplo:
 > ```bash
 > curl -X POST http://127.0.0.1:5000/predict \
 >   -H "Content-Type: application/json" \
@@ -74,9 +74,9 @@ El pipeline de **GitHub Actions** automatiza pruebas, construcción y publicaci�
 2. `make update-aca RG=rg-evalmod ACR=acrevalmod`  
    → Actualiza el contenedor en producción.  
 3. Monitoreo con:
-   ```bash
-   az containerapp logs show -g rg-evalmod -n evalmod-api --follow
-   ```
+```bash
+az containerapp logs show -g rg-evalmod -n evalmod-api --follow
+```
 
 ---
 
