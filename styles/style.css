@@ -277,13 +277,31 @@
 /* =========================================================
    Galería de capturas
    ========================================================= */
+/* Si usas Bootstrap, conserva tu estructura .row/.col-*. Evita solapes con límites. */
 .gallery .col-md-6 { display: flex; }
 .gallery .figure { width: 100%; }
-.gallery .figure img {
-  display: block; width: 100%; height: auto;
-  background: var(--bg-soft); padding: 8px;
-  border: 1px solid var(--card-border); border-radius: 12px;
+
+/* Límite de tamaño y contención para que no se superpongan */
+.gallery .figure img,
+.capture {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;        /* evita imágenes gigantes que empujen el layout */
+  object-fit: contain;      /* no recorta; encaja dentro del cuadro */
+  background: var(--bg-soft);
+  padding: 8px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
 }
+
+/* Grid de respaldo cuando NO hay Bootstrap (no hay .row) */
+.gallery:not(.row) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
 .figure-caption { color: var(--muted); margin-top: 6px; }
 section + section, .gallery { margin-top: 10px; }
 
@@ -321,4 +339,3 @@ aside .card .card-body a:hover { text-decoration: underline; }
 @media (prefers-reduced-transparency: reduce) {
   .navbar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
 }
-
