@@ -87,6 +87,7 @@ El pipeline de **GitHub Actions** automatiza pruebas, construcción y publicaci�
 | Throughput     | 50 req/s |
 | Uptime         | 99.9 % |
 | Tamaño imagen  | 186 MB |
+{: .table .table-sm .table-hover .align-middle}
 
 > Valores medidos con monitoreo básico de contenedor en Azure.
 
