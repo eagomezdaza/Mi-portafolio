@@ -1,16 +1,43 @@
-url: https://eagomezdaza.github.io 
-baseurl: /Mi-portafolio title: Mi portafolio 
-description: "Bienvenido a mi portafolio personal" 
-theme: jekyll-theme-primer 
-markdown: kramdown 
-exclude: 
- - venv 
- - .venv 
- - node_modules 
- - .github 
- - Gemfile 
- - Gemfile.lock 
- - .gitignore 
- - LICENSE
+# --- Datos del sitio ---
+url: "https://eagomezdaza.github.io"
+baseurl: "/Mi-portafolio"
+title: "Mi portafolio"
+description: "Bienvenido a mi portafolio personal"
+
+# --- Tema ---
+theme: "jekyll-theme-primer"
+
+# --- Markdown / Kramdown ---
+markdown: "kramdown"
+kramdown:
+  input: "GFM"
+  hard_wrap: false
+  parse_block_html: true  # permite HTML de bloque dentro de .md
+
+# --- Build robusto ---
+permalink: "pretty"
+timezone: "America/Santiago"
+
+# GitHub Pages plugins permitidos
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Archivos y carpetas a excluir del build
+exclude:
+  - "venv"
+  - ".venv"
+  - "node_modules"
+  - ".github"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - ".gitignore"
+  - "LICENSE"
+  - "README.md"
+  - ".python-version"
+  - ".env"
+  - ".env.*"
+  - "_site"
+
 
 
