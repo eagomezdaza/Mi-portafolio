@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: project
 title: Iris — API Flask & Docker
@@ -131,4 +130,5 @@ iris-flask-docker-api/
 - Publicar la imagen en **Docker Hub**.  
 - Integrar despliegue continuo en **Azure Container Apps** o **Render**.  
 - Extender el flujo CI/CD con tests de integración.
-```
+
+---

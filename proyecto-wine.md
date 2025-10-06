@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: project
 title: Wine — Clasificación
@@ -82,4 +81,5 @@ Incluye análisis exploratorio, preprocesamiento (escalado y codificación), val
 - Implementar **GridSearchCV** para afinar hiperparámetros.  
 - Agregar interpretabilidad con **SHAP** y análisis de importancia de variables.  
 - Documentar resultados comparativos en formato reproducible (`.ipynb` y `.html`).
-```
+
+---
