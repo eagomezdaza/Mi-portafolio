@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Mi portafolio — John Gómez
+markdown: 0
 ---
 
 <!-- HERO -->
