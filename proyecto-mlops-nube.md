@@ -49,14 +49,22 @@ make run-docker
 
 ---
 
-```md
 ## Endpoints principales
+
+<div class="table-responsive">
+
 | Método | Endpoint | Descripción |
 |:-------|:----------|:-------------|
-| `GET` | `/health` | Estado del modelo y metadatos |
+| `GET`  | `/health` | Estado del modelo y metadatos |
 | `POST` | `/predict` | Predicción a partir de 30 features |
-| `GET` | `/metrics` | Exposición de métricas Prometheus |
-```
+| `GET`  | `/metrics` | Exposición de métricas Prometheus |
+
+{: .table .table-sm .table-hover .align-middle }
+
+</div>
+
+> Los endpoints están documentados y verificados mediante pruebas unitarias automatizadas.
+
 
 > Ejemplo:
 
@@ -84,17 +92,23 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 
 ---
 
-```md
 ## Métricas de despliegue
+
+<div class="table-responsive">
+
 | Métrica        | Valor |
 |---------------:|:-----:|
 | Latencia p95   | 120 ms |
 | Throughput     | 50 req/s |
 | Uptime         | 99.9 % |
 | Tamaño imagen  | 186 MB |
-```
+
+{: .table .table-sm .table-hover .align-middle }
+
+</div>
 
 > Valores medidos con monitoreo básico de contenedor en Azure.
+
 
 ---
 

@@ -36,15 +36,21 @@ jupyter notebook
 ```
 
 ## Métricas
-```md
+
+<div class="table-responsive">
+
 | Modelo                    | Accuracy | F1-macro | Precision | Recall |
-|:------------------------- | -------: | -------: | --------: | -----: |
+|:--------------------------|---------:|---------:|----------:|-------:|
 | Regresión Logística (OVR) | 0.97     | 0.96     | 0.97      | 0.96   |
 | SVM (RBF)                 | 0.96     | 0.95     | 0.96      | 0.95   |
 | Random Forest             | 0.98     | 0.97     | 0.98      | 0.97   |
-```
+
+{: .table .table-sm .table-hover .align-middle }
+
+</div>
 
 > Las métricas se calcularon con validación cruzada estratificada (`cv=5`) y evaluación independiente en conjunto de prueba (30%).
+
 
 ## Capturas de resultados
 <div class="gallery row g-3">

@@ -1,114 +1,180 @@
+---
+# (front matter vacío para que Jekyll procese el layout)
+---
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }} · Mi portafolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>{{ page.title }} · {{ site.title | default: "Mi portafolio" }}</title>
 
-    <!-- Tus estilos -->
-    <link rel="stylesheet" href="/Mi-portafolio/styles/style.css" />
+  {%- comment -%}
+  SEO (requiere jekyll-seo-tag en _config.yml, ya lo tienes)
+  {%- endcomment -%}
+  {% seo %}
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+
+  <!-- Estilos del sitio (respeta baseurl con relative_url) -->
+  <link rel="stylesheet" href="{{ '/styles/style.css' | relative_url }}">
+
+  <!-- Canonical (útil si despliegas con /Mi-portafolio) -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="/Mi-portafolio/">{{ site.title | default: "Mi portafolio" }}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto gap-2 align-items-center">
-                    <li class="nav-item"><a class="btn btn-outline-primary"
-                            href="/Mi-portafolio/#proyectos">Proyectos</a></li>
-                    <li class="nav-item"><a class="btn btn-outline-primary" href="/Mi-portafolio/#contacto">Contacto</a>
-                    </li>
-                    <li class="nav-item"><a class="btn btn-outline-secondary" href="https://github.com/eagomezdaza"
-                            target="_blank" rel="noopener">GitHub</a></li>
-                    <li class="nav-item">
-                        <button id="themeToggle" class="btn btn-outline-light btn-sm" type="button"
-                            aria-label="Cambiar tema">🌓</button>
-                    </li>
-                </ul>
-            </div>
+  <!-- Enlace de salto para accesibilidad -->
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 p-2 bg-body border rounded"
+     href="#main">Saltar al contenido</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="{{ '/' | relative_url }}">
+        {{ site.title | default: "Mi portafolio" }}
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-2 align-items-center">
+          <li class="nav-item">
+            <a class="btn btn-outline-primary" href="{{ '/#proyectos' | relative_url }}">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-primary" href="{{ '/#contacto' | relative_url }}">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-secondary" href="https://github.com/eagomezdaza" target="_blank" rel="noopener">
+              GitHub
+            </a>
+          </li>
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-light btn-sm" type="button" aria-label="Cambiar tema">🌓</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <main id="main" class="container py-4">
+
+    <!-- Migas + volver -->
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        </ol>
+      </nav>
+
+      <a class="btn btn-sm btn-outline-primary" href="{{ '/' | relative_url }}">← Volver al inicio</a>
+    </div>
+
+    <!-- Cabecera del proyecto -->
+    <header class="mb-4">
+      <h1 class="fw-bold">{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <p class="text-secondary lead mb-2">{{ page.subtitle }}</p>
+      {% endif %}
+
+      <div class="d-flex gap-2 flex-wrap">
+        {% if page.stack %}
+          <span class="badge bg-dark">{{ page.stack }}</span>
+        {% endif %}
+
+        {% if page.tags %}
+          {% for tag in page.tags %}
+            <span class="badge bg-primary-subtle border border-primary text-primary">{{ tag }}</span>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="row g-4">
+      <!-- COLUMNA CONTENIDO -->
+      <div class="col-lg-8">
+        <article class="post-content">
+          {{ content }}  <!-- ¡Importante: sin filtros! -->
+        </article>
+      </div>
+
+      <!-- COLUMNA LATERAL -->
+      <aside class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Información</h5>
+
+            {% if page.repo %}
+              <p class="mb-2">
+                <strong>Repositorio:</strong><br>
+                <a href="{{ page.repo }}" target="_blank" rel="noopener">{{ page.repo }}</a>
+              </p>
+            {% endif %}
+
+            {% if page.dataset %}
+              <p class="mb-2"><strong>Dataset:</strong><br>{{ page.dataset }}</p>
+            {% endif %}
+
+            {% if page.stack %}
+              <p class="mb-0"><strong>Tecnologías:</strong><br>{{ page.stack }}</p>
+            {% endif %}
+          </div>
         </div>
-    </nav>
+      </aside>
+    </div>
+  </main>
 
-    <main class="container py-4">
-        <!-- Breadcrumb + volver -->
-        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="/Mi-portafolio/">Inicio</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
-                </ol>
-            </nav>
-            <a class="btn btn-sm btn-outline-primary" href="/Mi-portafolio/">← Volver al inicio</a>
-        </div>
+  <!-- FOOTER -->
+  <footer class="footer text-center mt-5 border-top">
+    <div class="container py-4">
+      <small>© <span id="year"></span> John Gómez — MIT License</small>
+    </div>
+  </footer>
 
-        <header class="mb-4">
-            <h1 class="fw-bold">{{ page.title }}</h1>
-            {% if page.subtitle %}<p class="text-secondary lead">{{ page.subtitle }}</p>{% endif %}
-            <div class="d-flex gap-2 flex-wrap">
-                {% for tag in page.tags %}
-                <span class="badge bg-primary-subtle border border-primary text-primary">{{ tag }}</span>
-                {% endfor %}
-            </div>
-        </header>
+  <!-- JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous">
+  </script>
 
-        <div class="row g-4">
-            <div class="col-lg-8">
-                {{ content }}
-            </div>
-            <aside class="col-lg-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-3">Información</h5>
-                        {% if page.repo %}
-                        <p class="mb-2"><strong>Repositorio:</strong><br>
-                            <a href="{{ page.repo }}" target="_blank" rel="noopener">{{ page.repo }}</a>
-                        </p>
-                        {% endif %}
-                        {% if page.dataset %}
-                        <p class="mb-2"><strong>Dataset:</strong><br>{{ page.dataset }}</p>
-                        {% endif %}
-                        {% if page.stack %}
-                        <p class="mb-2"><strong>Tecnologías:</strong><br>{{ page.stack }}</p>
-                        {% endif %}
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </main>
+  <!-- Tema claro/oscuro persistente -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const navbars = () => document.querySelectorAll('nav.navbar');
+      const applyBsTheme = (t) => navbars().forEach(n => n.setAttribute('data-bs-theme', t === 'dark' ? 'dark' : 'light'));
 
-    <footer class="footer text-center mt-5">
-        <div class="container py-4">
-            <small>© <span id="year"></span> John Gómez — MIT License</small>
-        </div>
-    </footer>
+      function setTheme(t) {
+        root.dataset.theme = t;
+        localStorage.setItem('theme', t);
+        applyBsTheme(t);
+      }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script>
-        (function () {
-            const root = document.documentElement;
-            const navbars = () => document.querySelectorAll('nav.navbar');
-            const applyBsTheme = (t) => navbars().forEach(n => n.setAttribute('data-bs-theme', t === 'dark' ? 'dark' : 'light'));
-            function setTheme(t) { root.dataset.theme = t; localStorage.setItem('theme', t); applyBsTheme(t); }
-            const saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            setTheme(saved);
-            const btn = document.getElementById('themeToggle');
-            if (btn) btn.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
-            document.getElementById('year').textContent = new Date().getFullYear();
-        })();
-    </script>
+      const saved = localStorage.getItem('theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setTheme(saved);
+
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
-
 </html>
+
