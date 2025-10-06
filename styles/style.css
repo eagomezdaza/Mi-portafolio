@@ -126,38 +126,69 @@
    ========================================================= */
 .navbar {
   position: sticky; top: 0; z-index: 50;
-  background: linear-gradient(180deg, rgba(16,22,33,.75), rgba(16,22,33,0));
+  background: linear-gradient(180deg, rgba(16,22,33,.9), rgba(16,22,33,.7));
   border-bottom: 1px solid var(--card-border);
 }
 @supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
   .navbar { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 }
 
-.brand {
-  color: var(--text);
+/* Marca */
+.brand,
+.navbar .navbar-brand {
+  color: #f8fafc !important;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 800 !important;
   letter-spacing: .3px;
 }
+
+/* Enlaces navbar (oscuro) */
 .navbar nav { display: flex; gap: 16px; }
 .navbar nav a {
-  color: var(--text);
+  color: #dbeafe !important;
   text-decoration: none;
-  opacity: .9;
+  opacity: 1 !important;
   font-weight: 600;
+  transition: color .2s ease;
 }
-.navbar nav a:hover { opacity: 1; text-decoration: underline; }
+.navbar nav a:hover { color: #93c5fd !important; text-decoration: underline; }
 
 /* Ajuste en tema claro */
 :root[data-theme="light"] .navbar {
-  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0));
+  background: linear-gradient(180deg, #ffffff, rgba(255,255,255,.92)) !important;
+  border-bottom: 1px solid #e5e7eb !important;
 }
+:root[data-theme="light"] .navbar .navbar-brand,
+:root[data-theme="light"] .brand { color: #0f172a !important; }
+:root[data-theme="light"] .navbar nav a { color: #1e3a8a !important; }
+:root[data-theme="light"] .navbar nav a:hover { color: #1d4ed8 !important; }
 
-/* Compat con Bootstrap si está presente */
-.navbar .navbar-brand {
-  color: #f1f6ff !important;
-  font-weight: 800 !important;
-  letter-spacing: .2px;
+/* Botones en navbar (GitHub, etc.) */
+.navbar .btn,
+.navbar .btn-outline-primary,
+.navbar .btn-outline-secondary,
+.navbar .btn-link {
+  color: #e5e7eb !important;
+  border-color: rgba(148,163,184,.45) !important;
+  background: transparent !important;
+}
+.navbar .btn:hover,
+.navbar .btn-outline-primary:hover,
+.navbar .btn-outline-secondary:hover,
+.navbar .btn-link:hover {
+  color: #ffffff !important;
+  border-color: #93c5fd !important;
+  background: rgba(148,163,184,.12) !important;
+}
+:root[data-theme="light"] .navbar .btn,
+:root[data-theme="light"] .navbar .btn-outline-primary,
+:root[data-theme="light"] .navbar .btn-outline-secondary,
+:root[data-theme="light"] .navbar .btn-link {
+  color: #1e293b !important;
+  border-color: rgba(0,0,0,.2) !important;
+}
+:root[data-theme="light"] .navbar .btn:hover {
+  background: rgba(0,0,0,.05) !important;
 }
 
 /* =========================================================
@@ -264,8 +295,15 @@
 .breadcrumb .breadcrumb-item a:hover { text-decoration: underline; }
 .breadcrumb .breadcrumb-item.active { color: #d6deea; }
 
-.btn-outline-primary { border-color: #4a6ea8; color: #cfe5ff; }
+/* Botón outline genérico + variante clara */
+.btn-outline-primary { border-color: #4a6ea8; color: #e2e8f0; }
 .btn-outline-primary:hover { background: #254066; color: #fff; }
+:root[data-theme="light"] .btn-outline-primary {
+  border-color: #1e40af; color: #1e3a8a; background: transparent;
+}
+:root[data-theme="light"] .btn-outline-primary:hover {
+  background: #e0e7ff; color: #111827; border-color: #1e40af;
+}
 
 /* =========================================================
    Sección Contacto (bloque claro en dark)
@@ -275,27 +313,28 @@
 .bg-body a:hover { text-decoration: underline; }
 
 /* =========================================================
-   Galería de capturas
+   Galería de capturas (sin bordes, solo sombra)
    ========================================================= */
-/* Si usas Bootstrap, conserva tu estructura .row/.col-*. Evita solapes con límites. */
+/* Si usas Bootstrap, conserva tu .row/.col-*. */
 .gallery .col-md-6 { display: flex; }
 .gallery .figure { width: 100%; }
 
-/* Límite de tamaño y contención para que no se superpongan */
+/* Límite y contención + solo sombra */
 .gallery .figure img,
 .capture {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 520px;        /* evita imágenes gigantes que empujen el layout */
-  object-fit: contain;      /* no recorta; encaja dentro del cuadro */
-  background: var(--bg-soft);
-  padding: 8px;
-  border: 1px solid var(--card-border);
+  max-height: 520px;           /* controla altura visible */
+  object-fit: contain;         /* mantiene proporción sin recortar */
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;        /* sin borde */
   border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.30) !important; /* sombra suave */
 }
 
-/* Grid de respaldo cuando NO hay Bootstrap (no hay .row) */
+/* Fallback grid cuando NO hay Bootstrap */
 .gallery:not(.row) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -306,7 +345,7 @@
 section + section, .gallery { margin-top: 10px; }
 
 /* =========================================================
-   Sidebar “Información” (una sola versión, sin duplicados)
+   Sidebar “Información”
    ========================================================= */
 aside .card .card-body h5,
 .row .col-lg-4 .card .card-body h5 {
@@ -315,9 +354,7 @@ aside .card .card-body h5,
 aside .card .card-body,
 .row .col-lg-4 .card .card-body { color: #e6edf7 !important; }
 aside .card .card-body a,
-.row .col-lg-4 .card .card-body a {
-  color: #8cc3ff !important; text-decoration: none;
-}
+.row .col-lg-4 .card .card-body a { color: #8cc3ff !important; text-decoration: none; }
 aside .card .card-body a:hover { text-decoration: underline; }
 
 /* =========================================================
@@ -331,7 +368,7 @@ aside .card .card-body a:hover { text-decoration: underline; }
 }
 
 /* =========================================================
-   Utilidades diversas
+   Utilidades
    ========================================================= */
 .hidden { display: none !important; }
 
@@ -339,161 +376,3 @@ aside .card .card-body a:hover { text-decoration: underline; }
 @media (prefers-reduced-transparency: reduce) {
   .navbar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
 }
-
-/* =========================================================
-   Footer
-   ========================================================= */
-.footer {
-  padding: var(--space-7) 0;
-  border-top: 1px solid var(--card-border);
-  color: var(--muted);
-  text-align: center;
-}
-
-/* =========================================================
-   Utilidades diversas
-   ========================================================= */
-.hidden { display: none !important; }
-
-/* Minimizar desenfoques en equipos débiles */
-@media (prefers-reduced-transparency: reduce) {
-  .navbar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
-}
-
-/* =========================================================
-   Ajuste de contraste para navbar y enlaces
-   ========================================================= */
-
-/* Enlaces de la navbar — modo oscuro */
-.navbar nav a {
-  color: #dbeafe; /* azul muy claro pero legible sobre fondo oscuro */
-  opacity: 1;
-  transition: color 0.2s ease;
-}
-.navbar nav a:hover {
-  color: #93c5fd; /* azul más saturado al pasar el mouse */
-  text-decoration: underline;
-}
-
-/* Enlaces de la navbar — modo claro */
-:root[data-theme="light"] .navbar nav a {
-  color: #1e3a8a; /* azul más oscuro para buena legibilidad */
-}
-:root[data-theme="light"] .navbar nav a:hover {
-  color: #1d4ed8; /* tono más vibrante al hover */
-}
-
-/* Marca principal (Mi portafolio) con mejor contraste */
-.brand {
-  color: #f8fafc;
-  font-weight: 800;
-}
-:root[data-theme="light"] .brand {
-  color: #0f172a;
-}
-
-/* Botones en la parte superior más visibles */
-.navbar .btn,
-.navbar button {
-  color: #f1f5f9;
-  border-color: rgba(255,255,255,0.4);
-}
-.navbar .btn:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-/* En modo claro, los botones se ajustan */
-:root[data-theme="light"] .navbar .btn,
-:root[data-theme="light"] .navbar button {
-  color: #1e293b;
-  border-color: rgba(0,0,0,0.2);
-}
-:root[data-theme="light"] .navbar .btn:hover {
-  background: rgba(0,0,0,0.05);
-}
-
-/* =========================================================
-   FIX de contraste fuerte (navbar, links, botones, breadcrumb)
-   ========================================================= */
-
-/* Variables de apoyo */
-:root{
-  --link-dark: #dbeafe;          /* enlaces en navbar (modo oscuro) */
-  --link-dark-hover: #93c5fd;
-
-  --link-light: #1e3a8a;         /* enlaces en navbar (modo claro) */
-  --link-light-hover: #1d4ed8;
-
-  --text-dark-navbar: #f8fafc;   /* brand en oscuro */
-  --text-light-navbar: #0f172a;  /* brand en claro */
-}
-
-/* Fondo de navbar más sólido en claro para no “lavar” el texto */
-:root[data-theme="light"] .navbar{
-  background: linear-gradient(180deg, #ffffff, rgba(255,255,255,.92)) !important;
-  border-bottom: 1px solid #e5e7eb !important;
-}
-
-/* Marca (Mi portafolio) */
-.navbar .navbar-brand,
-.brand{
-  color: var(--text-dark-navbar) !important;
-  font-weight: 800 !important;
-}
-:root[data-theme="light"] .navbar .navbar-brand,
-:root[data-theme="light"] .brand{
-  color: var(--text-light-navbar) !important;
-}
-
-/* Enlaces de la navbar */
-.navbar nav a{
-  color: var(--link-dark) !important;
-  opacity: 1 !important;
-  text-decoration: none;
-}
-.navbar nav a:hover{
-  color: var(--link-dark-hover) !important;
-  text-decoration: underline;
-}
-:root[data-theme="light"] .navbar nav a{
-  color: var(--link-light) !important;
-}
-:root[data-theme="light"] .navbar nav a:hover{
-  color: var(--link-light-hover) !important;
-}
-
-/* Breadcrumb más legible */
-.breadcrumb .breadcrumb-item a{
-  color: var(--link-dark) !important;
-}
-:root[data-theme="light"] .breadcrumb .breadcrumb-item a{
-  color: #1f2937 !important; /* gris oscuro legible en claro */
-}
-.breadcrumb .breadcrumb-item.active{
-  color: #94a3b8 !important; /* slate-400 */
-}
-:root[data-theme="light"] .breadcrumb .breadcrumb-item.active{
-  color: #475569 !important; /* slate-600 */
-}
-
-/* Botón “Volver al inicio” (outline) */
-.btn-outline-primary{
-  border-color: #4a6ea8 !important;
-  color: #e2e8f0 !important;          /* texto claro en oscuro */
-}
-.btn-outline-primary:hover{
-  background: #254066 !important;
-  color: #ffffff !important;
-}
-:root[data-theme="light"] .btn-outline-primary{
-  border-color: #1e40af !important;   /* azul oscuro */
-  color: #1e3a8a !important;          /* texto azul oscuro */
-  background: transparent !important;
-}
-:root[data-theme="light"] .btn-outline-primary:hover{
-  background: #e0e7ff !important;     /* azul muy claro */
-  color: #111827 !important;          /* texto casi negro */
-  border-color: #1e40af !important;
-}
-
-   
