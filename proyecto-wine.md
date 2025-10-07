@@ -22,7 +22,6 @@ tags: [Python, scikit-learn, CV]
 Proyecto de aprendizaje supervisado para clasificar tipos de vino utilizando el dataset **Wine** de UCI.  
 Incluye análisis exploratorio, preprocesamiento (escalado y codificación), validación cruzada y comparación de modelos.
 
----
 
 ## Cómo ejecutar
 1. Abre el repositorio: <a href="https://github.com/eagomezdaza/proyecto-wine" target="_blank" rel="noopener">proyecto-wine</a>  
@@ -82,11 +81,9 @@ jupyter notebook
 - El **escalado de variables** benefició especialmente a los modelos lineales (SVM, Logística).  
 - Los resultados validan la robustez del pipeline y la correcta separación de clases en el espacio multivariado.
 
----
 
 ## Próximos pasos
 - Implementar **GridSearchCV** para afinar hiperparámetros.  
 - Agregar interpretabilidad con **SHAP** y análisis de importancia de variables.  
 - Documentar resultados comparativos en formato reproducible (`.ipynb` y `.html`).
 
----

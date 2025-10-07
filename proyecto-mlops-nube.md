@@ -23,7 +23,6 @@ Proyecto **MLOps** que implementa una API REST con **Flask** para exponer un mod
 El flujo completo integra **entrenamiento reproducible**, **contenedorización con Docker**, **automatización CI/CD con GitHub Actions** y **despliegue en Azure Container Apps**.  
 Incluye validación de entradas, logging estructurado y métricas para monitoreo.
 
----
 
 ## Cómo ejecutar localmente
 1. Clonar el repositorio:
@@ -47,7 +46,6 @@ make build
 make run-docker
 ```
 
----
 
 ## Endpoints principales
 
@@ -73,23 +71,23 @@ curl -X POST http://127.0.0.1:5000/predict \
   -d @tests/data/sample.json
 ```
 
----
 
 ## Despliegue en Azure
 El pipeline de **GitHub Actions** automatiza pruebas, construcción y publicación de la imagen Docker en **Azure Container Registry (ACR)**, seguido del despliegue en **Azure Container Apps (ACA)**.
 
 ### Pasos principales
 1. `make push RG=rg-evalmod ACR=acrevalmod`  
-   → Publica la imagen en el registro.  
+   → Publica la imagen en el registro. 
+
 2. `make update-aca RG=rg-evalmod ACR=acrevalmod`  
-   → Actualiza el contenedor en producción.  
+   → Actualiza el contenedor en producción. 
+
 3. Monitoreo con:
 
 ```bash
 az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 ```
 
----
 
 ## Métricas de despliegue
 
@@ -106,9 +104,6 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 </div>
 
 > Valores medidos con monitoreo básico de contenedor en Azure.
-
-
----
 
 ## Capturas de referencia
 
@@ -164,7 +159,6 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 - El sistema mantiene **alta disponibilidad (>99.9%)** y baja latencia.  
 - La integración con **Prometheus** y **Azure Logs** facilita el monitoreo en producción.
 
----
 
 ## Próximos pasos
 - Incorporar **observabilidad avanzada** (Prometheus + Grafana).  
@@ -172,4 +166,3 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 - Extender las pruebas unitarias y de integración con **pytest** y *API contracts*.  
 - Publicar guía de despliegue y métricas de rendimiento.
 
----

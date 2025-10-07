@@ -10,6 +10,7 @@ tags: [Python, Flask, Docker, API, CI/CD]
 ---
 
 ## Tecnologías usadas
+
 <div class="d-flex flex-wrap gap-2 mb-3">
   <span class="badge bg-primary">Python</span>
   <span class="badge bg-info text-dark">Flask</span>
@@ -24,7 +25,6 @@ Implementación de una **API REST para la clasificación de flores Iris** usando
 El proyecto demuestra un flujo educativo de **MLOps**, abarcando entrenamiento, pruebas automatizadas, contenedorización y despliegue reproducible.  
 Incluye una interfaz **Streamlit** para visualización de predicciones y un **pipeline CI** configurado en GitHub Actions.
 
----
 
 ## Cómo ejecutar
 1. Clonar el repositorio:
@@ -43,6 +43,7 @@ pip install -r requirements.txt
 python app.py
 ```
 Endpoint principal: `http://127.0.0.1:5002`
+
 4. O bien construir y ejecutar el contenedor Docker:
 ```bash
 docker build -t ml-api-iris .
@@ -55,7 +56,6 @@ curl -X POST http://127.0.0.1:5002/predict \
      -d '{"features":[5.1, 3.5, 1.4, 0.2]}'
 ```
 
----
 
 ## Estructura del proyecto
 ```
@@ -76,8 +76,6 @@ iris-flask-docker-api/
 │   └── workflow_ci.png
 └── .github/workflows/ci.yml
 ```
-
----
 
 ## Resultados y evidencias
 
@@ -134,7 +132,6 @@ iris-flask-docker-api/
 - **GitHub Actions** automatiza las pruebas y el build, garantizando integridad continua.  
 - La interfaz **Streamlit** facilita la exploración de predicciones y visualiza probabilidades en tiempo real.
 
----
 
 ## Próximos pasos
 - Incorporar **autenticación básica** en la API.  
@@ -142,4 +139,3 @@ iris-flask-docker-api/
 - Integrar despliegue continuo en **Azure Container Apps** o **Render**.  
 - Extender el flujo CI/CD con tests de integración.
 
----
