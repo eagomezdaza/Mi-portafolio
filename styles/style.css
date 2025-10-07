@@ -608,3 +608,170 @@ html {
 .fw-extrabold {
   font-weight: 800 !important;
 }
+
+/* =========================================================
+   MODO CLARO — Refinado global del portafolio
+   (PÉGALO AL FINAL DEL CSS)
+   ========================================================= */
+
+/* 1) Tokens de color más agradables en claro */
+[data-theme="light"] {
+  --bg: #f6f9ff;
+  /* fondo con tono azulado suave */
+  --bg-soft: #eef3fb;
+  /* secciones suaves (footer) */
+  --text: #0f172a;
+  /* texto principal más contrastado */
+  --muted: #475569;
+  /* texto secundario */
+  --brand: #2563eb;
+  /* azul principal */
+  --brand-2: #06b6d4;
+  /* acento cian */
+  --card: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-hover: #ffffff;
+
+  /* Enlaces del tema claro (coinciden con tokens globales de link) */
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+}
+
+/* 2) Fondo general en claro (más “papel” y menos blanco plano) */
+[data-theme="light"] body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, 0.12), transparent 60%),
+    radial-gradient(1000px 600px at 110% 10%, rgba(37, 99, 235, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+/* 3) Navbar en claro (coherente y con borde sutil) */
+.navbar[data-bs-theme="light"] {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+/* 4) Tipografía en claro (mejor contraste) */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] .project-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .lead,
+[data-theme="light"] .text-secondary {
+  color: #475569 !important;
+}
+
+/* 5) Botones en claro */
+[data-theme="light"] .btn-outline-primary {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: transparent;
+}
+
+[data-theme="light"] .btn-outline-primary:hover {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* 6) Tarjetas y badges en claro */
+[data-theme="light"] .card,
+[data-theme="light"] .card-sm,
+[data-theme="light"] .contact-card,
+[data-theme="light"] .project-aside {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.06),
+    0 4px 8px rgba(15, 23, 42, 0.03);
+}
+
+[data-theme="light"] .badge {
+  background: #eaf0ff;
+  color: #183a78;
+  border: 1px solid rgba(25, 64, 160, 0.15);
+}
+
+/* 7) Enlaces globales en claro */
+[data-theme="light"] a {
+  color: var(--link);
+}
+
+[data-theme="light"] a:hover {
+  color: var(--link-hover);
+}
+
+/* 8) Galerías e imágenes en claro (tarjetas limpias) */
+[data-theme="light"] .gallery .figure {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .gallery .figure img,
+[data-theme="light"] .gallery img,
+[data-theme="light"] .capture {
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+/* 9) Breadcrumbs y links del project */
+[data-theme="light"] .project-breadcrumb a {
+  color: var(--link);
+}
+
+[data-theme="light"] .project-breadcrumb .sep {
+  color: #94a3b8;
+}
+
+/* 10) Aside de proyecto en claro (mejorado) */
+[data-theme="light"] .project-aside {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 248, 255, 0.98));
+  border: 1px solid rgba(180, 190, 210, 0.8);
+  box-shadow:
+    0 10px 25px rgba(59, 130, 246, 0.08),
+    0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .project-aside h3 {
+  color: #475569;
+}
+
+[data-theme="light"] .project-aside .meta {
+  border-bottom: 1px dashed rgba(160, 175, 195, 0.45);
+}
+
+[data-theme="light"] .project-aside .meta .k {
+  color: #64748b;
+}
+
+[data-theme="light"] .project-aside .meta a,
+[data-theme="light"] .project-aside .meta span {
+  color: #0f172a;
+}
+
+[data-theme="light"] .project-aside .meta a:hover {
+  color: #2563eb;
+}
+
+[data-theme="light"] .project-aside .btn.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  border: none;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.25);
+}
+
+[data-theme="light"] .project-aside .btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
+}
+
+/* 11) Footer claro */
+[data-theme="light"] .footer {
+  background: var(--bg-soft);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
