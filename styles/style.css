@@ -375,33 +375,31 @@ html {
   border-radius: var(--radius-sm);
 }
 
-/* Galería 2 columnas grandes (colapsa a 1 en pantallas pequeñas) */
+/* Galería 2 columnas responsiva y contenida */
 .gallery-2col {
   display: grid;
-  grid-template-columns: repeat(2, minmax(520px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.75rem;
   justify-content: center;
-  /* centra la grilla dentro del contenedor */
+  align-items: start;
 }
 
+/* Imagen grande pero contenida para caber en 2 columnas */
+.gallery-2col img {
+  width: clamp(320px, 42vw, 520px);
+  /* <= clave: no excede ~520px */
+  height: auto;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .12);
+}
+
+/* Centrado y separación de las figuras */
 .gallery-2col figure {
   margin: 0;
   text-align: center;
 }
 
-.gallery-2col img {
-  width: 100%;
-  max-width: 900px;
-  /* tope por si tu contenedor es muy ancho */
-  height: auto;
-  object-fit: contain;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
-}
-
-/* En pantallas < 1100px aprox, pasa a 1 columna */
-@media (max-width: 1100px) {
-  .gallery-2col {
-    grid-template-columns: 1fr;
-  }
+.gallery-2col .figure-caption {
+  margin-top: .5rem;
 }

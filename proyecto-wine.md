@@ -51,26 +51,23 @@ jupyter notebook
 ## Capturas de resultados
 
 <div class="gallery-2col" markdown="0">
-
   <figure>
-    <img
-      src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
-      alt="Matriz de confusión" loading="lazy" decoding="async">
-    <figcaption class="figure-caption mt-2">
+    <img src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
+         alt="Matriz de confusión" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
       <strong>Matriz de confusión</strong> — desempeño por clase
     </figcaption>
   </figure>
 
   <figure>
-    <img
-      src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
-      alt="Curvas ROC (OVR)" loading="lazy" decoding="async">
-    <figcaption class="figure-caption mt-2">
+    <img src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
+         alt="Curvas ROC (OVR)" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
       <strong>Curvas ROC (OVR)</strong> para las tres clases
     </figcaption>
   </figure>
-
 </div>
+
 
 
 
