@@ -107,51 +107,40 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 
 ## Capturas de referencia
 
-<div class="gallery row g-3">
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/mlops/pipeline-actions.png' | relative_url }}"
-           alt="Pipeline GitHub Actions" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Pipeline automatizado en GitHub Actions — ejecución de pruebas, build y deploy hacia Azure.
-      </figcaption>
-    </figure>
-  </div>
+<div class="gallery-2col" markdown="0">
+  <figure>
+    <img src="{{ '/assets/images/mlops/pipeline-actions.png' | relative_url }}"
+         alt="Pipeline GitHub Actions" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Pipeline en GitHub Actions</strong> — pruebas, build y deploy a Azure.
+    </figcaption>
+  </figure>
 
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/mlops/azure-deploy.png' | relative_url }}"
-           alt="Despliegue en Azure Container Apps" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Despliegue exitoso del contenedor en Azure Container Apps con endpoint público.
-      </figcaption>
-    </figure>
-  </div>
+  <figure>
+    <img src="{{ '/assets/images/mlops/azure-deploy.png' | relative_url }}"
+         alt="Despliegue en Azure Container Apps" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Azure Container Apps</strong> — despliegue exitoso con endpoint público.
+    </figcaption>
+  </figure>
 
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/mlops/logs-monitor.png' | relative_url }}"
-           alt="Monitoreo de logs en Azure" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Logs JSON estructurados y métricas de rendimiento accesibles desde Azure Monitor.
-      </figcaption>
-    </figure>
-  </div>
+  <figure>
+    <img src="{{ '/assets/images/mlops/logs-monitor.png' | relative_url }}"
+         alt="Monitoreo de logs en Azure" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Logs y métricas</strong> — JSON estructurado en Azure Monitor.
+    </figcaption>
+  </figure>
 
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/mlops/container-status.png' | relative_url }}"
-           alt="Estado del contenedor" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Verificación del estado HEALTHY del contenedor y métricas de disponibilidad.
-      </figcaption>
-    </figure>
-  </div>
+  <figure>
+    <img src="{{ '/assets/images/mlops/container-status.png' | relative_url }}"
+         alt="Estado del contenedor" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Container status</strong> — estado <em>HEALTHY</em> y disponibilidad.
+    </figcaption>
+  </figure>
 </div>
+
 
 ## Conclusiones
 - Se logró un **pipeline CI/CD funcional** con despliegue automatizado en la nube.  

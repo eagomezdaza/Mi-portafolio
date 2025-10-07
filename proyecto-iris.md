@@ -79,52 +79,40 @@ iris-flask-docker-api/
 
 ## Resultados y evidencias
 
-<div class="gallery row g-3">
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/iris/entrenamiento.png' | relative_url }}"
-           alt="Entrenamiento del modelo" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Ejecución del entrenamiento con Random Forest
-      </figcaption>
-    </figure>
-  </div>
+<div class="gallery-2col" markdown="0">
+  <figure>
+    <img src="{{ '/assets/images/iris/entrenamiento.png' | relative_url }}"
+         alt="Entrenamiento del modelo" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Entrenamiento del modelo</strong> — ejecución con Random Forest.
+    </figcaption>
+  </figure>
 
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/iris/api_local.png' | relative_url }}"
-           alt="Prueba API local" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Prueba de endpoints `/health` y `/predict` en entorno local
-      </figcaption>
-    </figure>
-  </div>
+  <figure>
+    <img src="{{ '/assets/images/iris/api_local.png' | relative_url }}"
+         alt="Prueba API local" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Prueba API local</strong> — endpoints <code>/health</code> y <code>/predict</code>.
+    </figcaption>
+  </figure>
 
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/iris/docker_run.png' | relative_url }}"
-           alt="Ejecución contenedor Docker" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Contenedor Docker saludable (`HEALTHY`) en ejecución
-      </figcaption>
-    </figure>
-  </div>
+  <figure>
+    <img src="{{ '/assets/images/iris/docker_run.png' | relative_url }}"
+         alt="Ejecución contenedor Docker" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Docker run</strong> — contenedor saludable <em>(HEALTHY)</em> en ejecución.
+    </figcaption>
+  </figure>
 
-  <div class="col-md-6">
-    <figure class="figure w-100">
-      <img class="img-fluid rounded shadow capture"
-           src="{{ '/assets/images/iris/streamlit_demo.png' | relative_url }}"
-           alt="Interfaz Streamlit" loading="lazy" decoding="async">
-      <figcaption class="figure-caption">
-        Interfaz visual para predicción en Streamlit
-      </figcaption>
-    </figure>
-  </div>
-
+  <figure>
+    <img src="{{ '/assets/images/iris/streamlit_demo.png' | relative_url }}"
+         alt="Interfaz Streamlit" loading="lazy" decoding="async">
+    <figcaption class="figure-caption">
+      <strong>Interfaz Streamlit</strong> — aplicación visual para predicción.
+    </figcaption>
+  </figure>
 </div>
+
 
 ## Conclusiones
 - La **API Flask** responde correctamente a los endpoints `/`, `/health` y `/predict`, validando entradas JSON.  
