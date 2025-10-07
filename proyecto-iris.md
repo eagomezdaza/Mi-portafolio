@@ -79,6 +79,31 @@ iris-flask-docker-api/
 
 ---
 
+<!-- DEBUG TÉCNICO - VERIFICACIÓN COMPLETA -->
+<div style="background: #ff6b6b; color: white; padding: 20px; margin: 20px 0; border-radius: 10px;">
+  <h4>🔧 DEBUG TÉCNICO - VERIFICACIÓN DE IMÁGENES</h4>
+  
+  <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px; margin: 10px 0;">
+    <h5>📁 URLs generadas por Jekyll:</h5>
+    <ul>
+      <li><strong>entrenamiento.png:</strong> <code>{{ '/assets/images/iris/entrenamiento.png' | relative_url }}</code></li>
+      <li><strong>api_local.png:</strong> <code>{{ '/assets/images/iris/api_local.png' | relative_url }}</code></li>
+      <li><strong>docker_run.png:</strong> <code>{{ '/assets/images/iris/docker_run.png' | relative_url }}</code></li>
+      <li><strong>streamlit_demo.png:</strong> <code>{{ '/assets/images/iris/streamlit_demo.png' | relative_url }}</code></li>
+    </ul>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px; margin: 10px 0;">
+    <h5>🔗 Enlaces directos para probar:</h5>
+    <ul>
+      <li><a href="{{ '/assets/images/iris/entrenamiento.png' | relative_url }}" target="_blank" style="color: #a5d8ff;">Probar entrenamiento.png</a></li>
+      <li><a href="{{ '/assets/images/iris/api_local.png' | relative_url }}" target="_blank" style="color: #a5d8ff;">Probar api_local.png</a></li>
+      <li><a href="{{ '/assets/images/iris/docker_run.png' | relative_url }}" target="_blank" style="color: #a5d8ff;">Probar docker_run.png</a></li>
+      <li><a href="{{ '/assets/images/iris/streamlit_demo.png' | relative_url }}" target="_blank" style="color: #a5d8ff;">Probar streamlit_demo.png</a></li>
+    </ul>
+  </div>
+</div>
+
 ## Resultados y evidencias
 <div class="gallery row g-3">
 
