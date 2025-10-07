@@ -374,3 +374,34 @@ html {
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
+
+/* Galería 2 columnas grandes (colapsa a 1 en pantallas pequeñas) */
+.gallery-2col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(520px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  /* centra la grilla dentro del contenedor */
+}
+
+.gallery-2col figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-2col img {
+  width: 100%;
+  max-width: 900px;
+  /* tope por si tu contenedor es muy ancho */
+  height: auto;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+}
+
+/* En pantallas < 1100px aprox, pasa a 1 columna */
+@media (max-width: 1100px) {
+  .gallery-2col {
+    grid-template-columns: 1fr;
+  }
+}

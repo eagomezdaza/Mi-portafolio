@@ -50,29 +50,28 @@ jupyter notebook
 
 ## Capturas de resultados
 
-<div class="gallery d-flex flex-column align-items-center gap-5" markdown="0">
+<div class="gallery-2col" markdown="0">
 
-  <figure class="figure text-center">
-    <img class="rounded-4 shadow-lg"
-         style="width: 900px; max-width: 95vw; height: auto; object-fit: contain;"
-         src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
-         alt="Matriz de confusión" loading="lazy" decoding="async">
-    <figcaption class="figure-caption mt-3">
+  <figure>
+    <img
+      src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
+      alt="Matriz de confusión" loading="lazy" decoding="async">
+    <figcaption class="figure-caption mt-2">
       <strong>Matriz de confusión</strong> — desempeño por clase
     </figcaption>
   </figure>
 
-  <figure class="figure text-center">
-    <img class="rounded-4 shadow-lg"
-         style="width: 900px; max-width: 95vw; height: auto; object-fit: contain;"
-         src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
-         alt="Curvas ROC (OVR)" loading="lazy" decoding="async">
-    <figcaption class="figure-caption mt-3">
+  <figure>
+    <img
+      src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
+      alt="Curvas ROC (OVR)" loading="lazy" decoding="async">
+    <figcaption class="figure-caption mt-2">
       <strong>Curvas ROC (OVR)</strong> para las tres clases
     </figcaption>
   </figure>
 
 </div>
+
 
 
 ## Conclusiones
