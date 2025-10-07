@@ -777,7 +777,7 @@ html {
 }
 
 /* =========================================================
-   HERO DE PRESENTACIÓN CON FOTO PERSONAL
+   HERO DE PRESENTACIÓN CON FOTO PERSONAL CENTRADA
    ========================================================= */
 
 .hero-intro {
@@ -793,7 +793,10 @@ html {
   margin: 0 auto;
 }
 
+/* Foto perfectamente centrada */
 .hero-photo {
+  display: block;
+  margin: 0 auto 1.5rem;
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -807,13 +810,27 @@ html {
   transform: scale(1.03);
 }
 
-/* Títulos en el hero */
+/* Texto del hero */
 .hero-intro h1 {
   font-weight: 800;
   background: linear-gradient(135deg, var(--text), var(--brand));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Animación sutil al cargar */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Versión clara */
@@ -827,10 +844,6 @@ html {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
 }
 
-/* Peso extra si no existe en Bootstrap */
-.fw-extrabold {
-  font-weight: 800 !important;
-}
 
 /* =========================================================
    SECCIÓN DE HABILIDADES
