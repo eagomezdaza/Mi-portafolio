@@ -50,31 +50,28 @@ jupyter notebook
 
 ## Capturas de resultados
 
-<div class="gallery row justify-content-center g-4" markdown="0">
-  <div class="col-md-5 col-sm-8 text-center">
-    <figure class="figure">
-      <img class="img-fluid rounded-4 shadow-lg"
-           style="width: 100%; max-width: 550px; height: auto; object-fit: contain;"
-           src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
-           alt="Matriz de confusión" loading="lazy" decoding="async">
-      <figcaption class="figure-caption mt-3">
-        <strong>Matriz de confusión</strong> — desempeño por clase
-      </figcaption>
-    </figure>
-  </div>
+<div class="gallery d-flex flex-wrap justify-content-center gap-5" markdown="0">
+  <figure class="figure text-center">
+    <img class="rounded-4 shadow-lg"
+         style="width: 650px; max-width: 90vw; height: auto; object-fit: contain;"
+         src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
+         alt="Matriz de confusión" loading="lazy" decoding="async">
+    <figcaption class="figure-caption mt-3">
+      <strong>Matriz de confusión</strong> — desempeño por clase
+    </figcaption>
+  </figure>
 
-  <div class="col-md-5 col-sm-8 text-center">
-    <figure class="figure">
-      <img class="img-fluid rounded-4 shadow-lg"
-           style="width: 100%; max-width: 550px; height: auto; object-fit: contain;"
-           src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
-           alt="Curvas ROC" loading="lazy" decoding="async">
-      <figcaption class="figure-caption mt-3">
-        <strong>Curvas ROC (OVR)</strong> para las tres clases
-      </figcaption>
-    </figure>
-  </div>
+  <figure class="figure text-center">
+    <img class="rounded-4 shadow-lg"
+         style="width: 650px; max-width: 90vw; height: auto; object-fit: contain;"
+         src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
+         alt="Curvas ROC" loading="lazy" decoding="async">
+    <figcaption class="figure-caption mt-3">
+      <strong>Curvas ROC (OVR)</strong> para las tres clases
+    </figcaption>
+  </figure>
 </div>
+
 
 
 
