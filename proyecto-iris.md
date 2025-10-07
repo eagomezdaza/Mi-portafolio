@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: default
 title: Iris — API Flask & Docker
 subtitle: Clasificación de flores Iris mediante API REST y contenedorización
 permalink: /proyecto-iris/
