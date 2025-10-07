@@ -50,31 +50,32 @@ jupyter notebook
 
 ## Capturas de resultados
 
-<div class="gallery row g-4" markdown="0">
-  <div class="col-md-6">
-    <figure class="figure text-center">
-      <img class="img-fluid rounded shadow-lg p-1 bg-body-tertiary"
-           style="max-width: 95%; height: auto;"
+<div class="gallery row justify-content-center g-4" markdown="0">
+  <div class="col-md-5 col-sm-8 text-center">
+    <figure class="figure">
+      <img class="img-fluid rounded-4 shadow-lg"
+           style="width: 100%; max-width: 550px; height: auto; object-fit: contain;"
            src="{{ '/assets/images/wine/confusion-matrix.png' | relative_url }}"
            alt="Matriz de confusión" loading="lazy" decoding="async">
-      <figcaption class="figure-caption mt-2">
-        Matriz de confusión — desempeño por clase
+      <figcaption class="figure-caption mt-3">
+        <strong>Matriz de confusión</strong> — desempeño por clase
       </figcaption>
     </figure>
   </div>
 
-  <div class="col-md-6">
-    <figure class="figure text-center">
-      <img class="img-fluid rounded shadow-lg p-1 bg-body-tertiary"
-           style="max-width: 95%; height: auto;"
+  <div class="col-md-5 col-sm-8 text-center">
+    <figure class="figure">
+      <img class="img-fluid rounded-4 shadow-lg"
+           style="width: 100%; max-width: 550px; height: auto; object-fit: contain;"
            src="{{ '/assets/images/wine/roc-curves.png' | relative_url }}"
            alt="Curvas ROC" loading="lazy" decoding="async">
-      <figcaption class="figure-caption mt-2">
-        Curvas ROC (OVR) para las tres clases
+      <figcaption class="figure-caption mt-3">
+        <strong>Curvas ROC (OVR)</strong> para las tres clases
       </figcaption>
     </figure>
   </div>
 </div>
+
 
 
 ## Conclusiones
