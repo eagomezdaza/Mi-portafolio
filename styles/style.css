@@ -422,6 +422,7 @@ html {
     --link-hover: #1d4ed8;
   }
 }
+
 [data-theme="light"] {
   --link: #2563eb;
   --link-hover: #1d4ed8;
@@ -438,7 +439,7 @@ html {
 }
 
 /* Tipografía y espaciado interno */
-.contact-card p { 
+.contact-card p {
   margin: 0 0 .5rem;
   line-height: 1.65;
 }
@@ -456,10 +457,12 @@ html {
   border-radius: 4px;
   outline: none;
 }
-.contact-card a:hover { 
-  color: var(--link-hover); 
-  text-decoration: underline; 
+
+.contact-card a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
+
 .contact-card a:focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
@@ -472,4 +475,136 @@ html {
   text-align: center;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   opacity: .9;
+}
+
+
+/* ============== Project Page (detalle de proyecto) ============== */
+
+.project-page {
+  color: var(--text);
+}
+
+.project-page .project-title {
+  font-size: var(--h1);
+  line-height: 1.1;
+}
+
+.project-page .project-subtitle {
+  color: var(--muted);
+}
+
+/* Breadcrumbs con contraste */
+.project-breadcrumb a {
+  color: var(--link, #9fccff);
+  text-decoration: none;
+}
+
+.project-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.project-breadcrumb .sep {
+  color: var(--muted);
+  margin: 0 .5rem;
+}
+
+/* Tipografía del contenido */
+.project-content h2,
+.project-content h3,
+.project-content h4 {
+  color: var(--text);
+  margin-top: 1.25rem;
+}
+
+.project-content p,
+.project-content li {
+  color: var(--text);
+}
+
+.project-content .text-secondary {
+  color: var(--muted) !important;
+}
+
+/* Aside derecho: recuadro compacto y sticky */
+.project-aside {
+  position: sticky;
+  top: 88px;
+  /* compensa navbar fijo */
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+.project-aside .tracking {
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: .75rem;
+}
+
+/* Filas de metadatos (evita panel enorme) */
+.project-aside .meta {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: .5rem 1rem;
+  align-items: start;
+  padding: .4rem 0;
+  border-bottom: 1px dashed var(--card-border);
+}
+
+.project-aside .meta:last-child {
+  border-bottom: 0;
+}
+
+.project-aside .meta .k {
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+
+/* Enlaces y botón dentro del aside */
+.project-aside a {
+  color: var(--link, #9fccff);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.project-aside a:hover {
+  color: var(--link-hover, #c9e0ff);
+  text-decoration: underline;
+}
+
+.project-aside .btn.btn-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border: none;
+  color: #fff;
+}
+
+.project-aside .btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--glow);
+}
+
+/* Tarjeta base reutilizable */
+.card-sm {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+
+/* Responsive: aside no sticky en móviles */
+@media (max-width: 991.98px) {
+  .project-aside {
+    position: static;
+    top: auto;
+  }
+}
+
+/* Peso extra para títulos (Bootstrap no lo trae) */
+.fw-extrabold {
+  font-weight: 800 !important;
 }
