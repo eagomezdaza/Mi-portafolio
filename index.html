@@ -108,10 +108,53 @@ title: Mi portafolio — John Gómez
   </div>
 </section>
 
+
 <!-- =========================================================
      FORMACIÓN ACADÉMICA
      ========================================================= -->
 <section id="formacion" class="skills-section py-5">
+  <style>
+    /* =========================================================
+       SECCIÓN FORMACIÓN ACADÉMICA — Imágenes uniformes
+       ========================================================= */
+    #formacion img {
+      width: 260px;
+      /* ancho fijo */
+      height: 260px;
+      /* alto fijo */
+      object-fit: contain;
+      /* mantiene proporciones sin deformar */
+      background-color: #fff;
+      /* fondo neutro */
+      border-radius: 0.75rem;
+      /* bordes suaves */
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #formacion img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Ajuste visual adicional: centra los textos y armoniza altura */
+    #formacion .skill-card {
+      background-color: var(--card, #f8f9fa);
+      padding: 1.5rem 1rem;
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #formacion .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    #formacion .skill-card h5 {
+      font-weight: 700;
+    }
+  </style>
+
   <div class="container text-center">
     <h2 class="fw-extrabold mb-4">Formación Académica</h2>
     <div class="row g-4 justify-content-center">
@@ -152,6 +195,7 @@ title: Mi portafolio — John Gómez
     </div>
   </div>
 </section>
+
 
 
 <!-- PROYECTOS -->
