@@ -775,3 +775,120 @@ html {
   background: var(--bg-soft);
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
+
+/* =========================================================
+   HERO DE PRESENTACIÓN CON FOTO PERSONAL
+   ========================================================= */
+
+.hero-intro {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: var(--text);
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  position: relative;
+}
+
+.hero-intro .container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.hero-photo:hover {
+  transform: scale(1.03);
+}
+
+/* Títulos en el hero */
+.hero-intro h1 {
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--text), var(--brand));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Versión clara */
+[data-theme="light"] .hero-intro {
+  background: linear-gradient(145deg, #e2e8f0, #f8fafc);
+  color: #0f172a;
+}
+
+[data-theme="light"] .hero-photo {
+  border-color: rgba(15, 23, 42, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* Peso extra si no existe en Bootstrap */
+.fw-extrabold {
+  font-weight: 800 !important;
+}
+
+/* =========================================================
+   SECCIÓN DE HABILIDADES
+   ========================================================= */
+
+.skills-section {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand);
+  box-shadow: var(--shadow-lg);
+}
+
+.skill-card h5 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Versión clara */
+[data-theme="light"] .skills-section {
+  background: #f8fafc;
+}
+
+[data-theme="light"] .skill-card {
+  background: #fff;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .skill-card:hover {
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.15);
+}

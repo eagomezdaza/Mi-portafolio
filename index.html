@@ -3,33 +3,108 @@ layout: default
 title: Mi portafolio — John Gómez
 ---
 
-<!-- HERO -->
-<header class="container py-5" style="margin-top:64px">
-  <div class="row align-items-center">
-    <div class="col-lg-8">
-      <h1 class="display-5 fw-bold mb-2">Mi portafolio</h1>
-      <p class="subtitle">John Gómez</p>
-      <p class="lead text-secondary">
-        Modelos predictivos, visualización y despliegue reproducible (Docker & CI/CD).
-      </p>
-      <div class="d-flex gap-2 flex-wrap mt-3">
-        <img alt="Python"
-          src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54">
-        <img alt="scikit-learn"
-          src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white">
-        <img alt="CI/CD"
-          src="https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white">
+<!-- HERO con foto -->
+<section class="hero-intro text-center">
+  <div class="container">
+
+    <img src="{{ '/assets/images/perfil.jpeg' | relative_url }}" alt="Foto de John Gómez" class="hero-photo mb-4">
+
+    <h1 class="fw-extrabold mb-1">John Gómez</h1>
+    <p class="subtitle mb-2">Mi portafolio</p>
+
+    <p class="lead text-secondary mb-3">
+      Modelos predictivos, visualización y despliegue reproducible (Docker &amp; CI/CD).
+    </p>
+
+    <div class="d-flex gap-2 flex-wrap justify-content-center mb-3">
+      <img alt="Python"
+        src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54">
+      <img alt="scikit-learn"
+        src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white">
+      <img alt="CI/CD"
+        src="https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white">
+    </div>
+
+    <div class="d-flex gap-2 justify-content-center">
+      <a class="btn btn-primary btn-lg" href="#proyectos">Ver proyectos</a>
+      <a class="btn btn-outline-secondary btn-lg" href="https://github.com/eagomezdaza" target="_blank"
+        rel="noopener">GitHub</a>
+      <a class="btn btn-outline-success btn-lg" href="https://www.linkedin.com/in/eagomezdaza/" target="_blank"
+        rel="noopener">LinkedIn</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     SECCIÓN DE HABILIDADES
+     ========================================================= -->
+<section id="habilidades" class="skills-section py-5">
+  <div class="container text-center">
+    <h2 class="fw-extrabold mb-4">Habilidades</h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Python</h5>
+          <p>Scripts de datos, prototipos y modelos con scikit-learn.</p>
+        </div>
       </div>
-      <div class="mt-4 d-flex gap-2">
-        <a class="btn btn-primary btn-lg" href="#proyectos">Ver proyectos</a>
-        <a class="btn btn-outline-secondary btn-lg" href="https://github.com/eagomezdaza" target="_blank"
-          rel="noopener">GitHub</a>
-        <a class="btn btn-outline-success btn-lg" href="https://www.linkedin.com/in/eagomezdaza/" target="_blank"
-          rel="noopener">LinkedIn</a>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>R</h5>
+          <p>Análisis estadístico y visualización de datos.</p>
+        </div>
       </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Linux</h5>
+          <p>Entornos de trabajo reproducibles y automatización en terminal.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Git &amp; GitHub</h5>
+          <p>Control de versiones, flujo de ramas y despliegues colaborativos.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Flask &amp; APIs</h5>
+          <p>Desarrollo de endpoints REST para servir modelos de ML.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Docker</h5>
+          <p>Contenerización de aplicaciones y entornos de despliegue.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Azure (ACA)</h5>
+          <p>Despliegue de servicios y APIs en Azure Container Apps.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="skill-card">
+          <h5>Aprendiendo ML</h5>
+          <p>Profundizando en validación, métricas y prácticas de MLOps.</p>
+        </div>
+      </div>
+
     </div>
   </div>
-</header>
+</section>
+
 
 <!-- PROYECTOS -->
 <section id="proyectos" class="container pb-5">
