@@ -403,3 +403,73 @@ html {
 .gallery-2col .figure-caption {
   margin-top: .5rem;
 }
+
+
+/* =========================================================
+   Contacto (modo oscuro/claro con alto contraste)
+   ========================================================= */
+
+/* Tokens de enlace (no invaden tu paleta existente) */
+:root {
+  --link: #9fccff;
+  --link-hover: #c9e0ff;
+}
+
+/* En modo claro, los enlaces van más oscuros */
+@media (prefers-color-scheme: light) {
+  :root {
+    --link: #2563eb;
+    --link-hover: #1d4ed8;
+  }
+}
+[data-theme="light"] {
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+}
+
+/* Tarjeta de contacto, sin depender de clases Bootstrap como bg-body */
+.contact-card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+}
+
+/* Tipografía y espaciado interno */
+.contact-card p { 
+  margin: 0 0 .5rem;
+  line-height: 1.65;
+}
+
+/* Etiquetas (Email, LinkedIn, GitHub) siempre visibles en oscuro */
+.contact-card strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Enlaces con contraste y foco accesible */
+.contact-card a {
+  color: var(--link);
+  text-decoration: none;
+  border-radius: 4px;
+  outline: none;
+}
+.contact-card a:hover { 
+  color: var(--link-hover); 
+  text-decoration: underline; 
+}
+.contact-card a:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Opcional: iconos monospace alineados */
+.contact-card .k {
+  display: inline-block;
+  width: 1.4rem;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  opacity: .9;
+}
