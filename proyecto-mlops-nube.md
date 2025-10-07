@@ -58,7 +58,6 @@ make run-docker
 | `GET`  | `/health` | Estado del modelo y metadatos |
 | `POST` | `/predict` | Predicción a partir de 30 features |
 | `GET`  | `/metrics` | Exposición de métricas Prometheus |
-
 {: .table .table-sm .table-hover .align-middle }
 
 </div>
@@ -102,7 +101,6 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 | Throughput     | 50 req/s |
 | Uptime         | 99.9 % |
 | Tamaño imagen  | 186 MB |
-
 {: .table .table-sm .table-hover .align-middle }
 
 </div>

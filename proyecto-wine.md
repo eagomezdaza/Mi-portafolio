@@ -44,7 +44,6 @@ jupyter notebook
 | Regresión Logística (OVR) | 0.97     | 0.96     | 0.97      | 0.96   |
 | SVM (RBF)                 | 0.96     | 0.95     | 0.96      | 0.95   |
 | Random Forest             | 0.98     | 0.97     | 0.98      | 0.97   |
-
 {: .table .table-sm .table-hover .align-middle }
 
 </div>
