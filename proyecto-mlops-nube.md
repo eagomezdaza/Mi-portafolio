@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: MLOps en la Nube
 subtitle: API Flask contenedorizada y desplegada en Azure con CI/CD
 permalink: /mlops-nube/
