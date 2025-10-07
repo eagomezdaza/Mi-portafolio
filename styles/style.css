@@ -810,6 +810,10 @@ html {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
+  display: block;
+  /* <-- NUEVO */
+  margin: 0 auto 1.5rem;
+  /* <-- NUEVO: centra horizontal + separa del título */
 }
 
 .hero-photo:hover {
