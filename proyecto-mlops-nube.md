@@ -111,6 +111,7 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
 ---
 
 ## Capturas de referencia
+
 <div class="gallery row g-3">
   <div class="col-md-6">
     <figure class="figure w-100">
@@ -156,9 +157,6 @@ az containerapp logs show -g rg-evalmod -n evalmod-api --follow
     </figure>
   </div>
 </div>
-
-
----
 
 ## Conclusiones
 - Se logró un **pipeline CI/CD funcional** con despliegue automatizado en la nube.  

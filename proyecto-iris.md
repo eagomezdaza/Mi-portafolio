@@ -80,8 +80,8 @@ iris-flask-docker-api/
 ---
 
 ## Resultados y evidencias
-<div class="gallery row g-3">
 
+<div class="gallery row g-3">
   <div class="col-md-6">
     <figure class="figure w-100">
       <img class="img-fluid rounded shadow capture"
@@ -127,9 +127,6 @@ iris-flask-docker-api/
   </div>
 
 </div>
-
-
----
 
 ## Conclusiones
 - La **API Flask** responde correctamente a los endpoints `/`, `/health` y `/predict`, validando entradas JSON.  

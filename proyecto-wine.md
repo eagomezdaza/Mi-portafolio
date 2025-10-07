@@ -52,6 +52,7 @@ jupyter notebook
 
 
 ## Capturas de resultados
+
 <div class="gallery row g-3">
   <div class="col-md-6">
     <figure class="figure w-100">
@@ -75,9 +76,6 @@ jupyter notebook
     </figure>
   </div>
 </div>
-
-
----
 
 ## Conclusiones
 - **Random Forest** mostró el mejor rendimiento general con AUC > 0.97 en todas las clases.  
